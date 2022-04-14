@@ -4,6 +4,7 @@ export const imageContext = createContext();
 
 export function ProvideImage({ children }) {
   const [image, setImage] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     setImage({
       title: 'title',
@@ -112,7 +113,8 @@ export function ProvideImage({ children }) {
         'rgb(216, 216, 217)',
       ],
     });
-  }, []);
+    setLoading(false);
+  }, [loading]);
 
   //   const login = (email, password) => {
   //     const loginSuccessful =
@@ -128,6 +130,8 @@ export function ProvideImage({ children }) {
   //   };
 
   return (
-    <imageContext.Provider value={{ image }}>{children}</imageContext.Provider>
+    <imageContext.Provider value={{ image, loading, setLoading }}>
+      {children}
+    </imageContext.Provider>
   );
 }
