@@ -1,4 +1,3 @@
-import { array } from 'prop-types';
 import Pixl from '../components/Canvas/Pixl';
 
 export function createImage(title, heightInput, widthInput) {
@@ -58,14 +57,7 @@ export function renderImage(imageObject) {
 
   for (let i = 0; i < area; i++) {
     // const pixel = document.createElement('div');
-    image.push(
-      <Pixl
-        className="pixel-div"
-        style={{
-          backgroundColor: colorArray[i],
-        }}
-      />
-    );
+    image.push(<Pixl background={colorArray[i]} />);
     // pixel.style.backgroundColor = colorArray[i];
     // pixel.classList.add('pixel-div');
     // if (imageObject.height === imageObject.width) {
