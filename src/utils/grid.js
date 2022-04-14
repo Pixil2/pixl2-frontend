@@ -56,39 +56,37 @@ export function renderImage(imageObject) {
   const image = [];
 
   for (let i = 0; i < area; i++) {
-    // const pixel = document.createElement('div');
-    image.push(<Pixl background={colorArray[i]} />);
-    // pixel.style.backgroundColor = colorArray[i];
-    // pixel.classList.add('pixel-div');
-    // if (imageObject.height === imageObject.width) {
-    //   pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
-    //   pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-    // canvas.style.height = `${
-    //   imageObject.height * Math.round(500 / imageObject.height)
-    // }px`;
-    // canvas.style.width = `${
-    //   imageObject.width * Math.round(500 / imageObject.height)
-    // }px`;
-    // if (imageObject.height >= imageObject.width) {
-    //   pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
-    //   pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
-    // canvas.style.height = `${Math.round(
-    //   imageObject.height * Math.round(500 / imageObject.height)
-    // )}px`;
-    // canvas.style.width = `${Math.round(
-    //   imageObject.width * Math.round(500 / imageObject.height)
-    // )}px`;
-    // } else {
-    //   pixel.style.width = `${Math.round(500 / imageObject.width)}px`;
-    //   pixel.style.height = `${Math.round(500 / imageObject.width)}px`;
-    // canvas.style.width = `${Math.round(
-    //   imageObject.width * Math.round(500 / imageObject.width)
-    // )}px`;
-    // canvas.style.height = `${Math.round(
-    //   imageObject.height * Math.round(500 / imageObject.width)
-    // )}px`;
-    // }
-    // canvas.append(pixel);
+    if (imageObject.height >= imageObject.width) {
+      image.push(
+        <Pixl
+          background={colorArray[i]}
+          width={`${Math.round(500 / imageObject.height)}px`}
+          height={`${Math.round(500 / imageObject.height)}px`}
+        />
+      );
+      // canvas.style.height = `${Math.round(
+      //   imageObject.height * Math.round(500 / imageObject.height)
+      // )}px`;
+      // canvas.style.width = `${Math.round(
+      //   imageObject.width * Math.round(500 / imageObject.height)
+      // )}px`;
+    } else {
+      image.push(
+        <Pixl
+          background={colorArray[i]}
+          width={`${Math.round(500 / imageObject.width)}px`}
+          height={`${Math.round(500 / imageObject.width)}px`}
+        />
+      );
+      // canvas.style.width = `${Math.round(
+      //   imageObject.width * Math.round(500 / imageObject.width)
+      // )}px`;
+      // canvas.style.height = `${Math.round(
+      //   imageObject.height * Math.round(500 / imageObject.width)
+      // )}px`;
+      // }
+      // canvas.append(pixel);
+    }
   }
   return image;
 }
