@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  background-color: lightgrey;
-  height: 50vw;
-  width: 50vw;
+  background-color: pink;
+  height: 500px;
+  width: 500px;
 }

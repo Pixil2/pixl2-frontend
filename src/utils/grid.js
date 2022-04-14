@@ -7,7 +7,7 @@ export function createImage(title, heightInput, widthInput) {
   let x = widthInput / 2;
   let y = 1;
   if (isEven(widthInput) === true) {
-    for (let i = 1; i < halfArea; i++) {
+    for (let i = 0; i < halfArea; i++) {
       if (isEven(y) === true) {
         colorArray.push(`rgb(243, 243, 244)`, `rgb(216, 216, 217)`);
         x--;
@@ -25,7 +25,7 @@ export function createImage(title, heightInput, widthInput) {
       }
     }
   } else {
-    for (let i = 1; i < halfArea; i++) {
+    for (let i = 0; i < halfArea; i++) {
       colorArray.push(`rgb(216, 216, 217)`, `rgb(243, 243, 244)`);
     }
   }
@@ -45,10 +45,10 @@ function isEven(num) {
   return num % 2 === 0;
 }
 
-export function updateImage(imageObject, colorArray) {
-  imageObject.colors = colorArray;
-  return imageObject;
-}
+// export function updateImage(imageObject, colorArray) {
+//   imageObject.colors = colorArray;
+//   return imageObject;
+// }
 
 export function renderImage(imageObject) {
   const colorArray = imageObject.colors;
@@ -64,12 +64,6 @@ export function renderImage(imageObject) {
           height={`${Math.round(500 / imageObject.height)}px`}
         />
       );
-      // canvas.style.height = `${Math.round(
-      //   imageObject.height * Math.round(500 / imageObject.height)
-      // )}px`;
-      // canvas.style.width = `${Math.round(
-      //   imageObject.width * Math.round(500 / imageObject.height)
-      // )}px`;
     } else {
       image.push(
         <Pixl
@@ -78,14 +72,6 @@ export function renderImage(imageObject) {
           height={`${Math.round(500 / imageObject.width)}px`}
         />
       );
-      // canvas.style.width = `${Math.round(
-      //   imageObject.width * Math.round(500 / imageObject.width)
-      // )}px`;
-      // canvas.style.height = `${Math.round(
-      //   imageObject.height * Math.round(500 / imageObject.width)
-      // )}px`;
-      // }
-      // canvas.append(pixel);
     }
   }
   return image;
