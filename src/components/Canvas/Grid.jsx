@@ -3,7 +3,7 @@ import { renderImage } from '../../utils/grid';
 import styles from './Grid.css';
 import { imageContext } from '../../context/ImageContext';
 
-export default function Grid() {
+export default function Grid(tool) {
   const { image } = useContext(imageContext);
   const array = renderImage(image);
 

@@ -1,4 +1,5 @@
 import Pixl from '../components/Canvas/Pixl';
+import { v4 as uuid } from 'uuid';
 
 export function createImage(title, heightInput, widthInput) {
   let area = heightInput * widthInput;
@@ -59,6 +60,7 @@ export function renderImage(imageObject) {
     if (imageObject.height >= imageObject.width) {
       image.push(
         <Pixl
+          key={uuid()}
           background={colorArray[i]}
           width={`${Math.round(500 / imageObject.height)}px`}
           height={`${Math.round(500 / imageObject.height)}px`}
@@ -67,6 +69,7 @@ export function renderImage(imageObject) {
     } else {
       image.push(
         <Pixl
+          key={uuid()}
           background={colorArray[i]}
           width={`${Math.round(500 / imageObject.width)}px`}
           height={`${Math.round(500 / imageObject.width)}px`}
