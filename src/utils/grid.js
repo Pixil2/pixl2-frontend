@@ -1,3 +1,6 @@
+import { array } from 'prop-types';
+import Pixl from '../components/Canvas/Pixl';
+
 export function createImage(title, heightInput, widthInput) {
   let area = heightInput * widthInput;
   let halfArea = Math.ceil(area / 2);
@@ -49,18 +52,24 @@ export function updateImage(imageObject, colorArray) {
 }
 
 export function renderImage(imageObject) {
-  //   const canvas = document.getElementById('canvas');
-  canvas.style.gridTemplateColumns = `repeat(${imageObject.width}, 1fr)`;
-  canvas.style.gridTemplateRows = `repeat(${imageObject.height}, 1fr)`;
   const colorArray = imageObject.colors;
   const area = imageObject.height * imageObject.width;
 
   for (let i = 0; i < area; i++) {
-    const pixel = document.createElement('div');
-    pixel.style.backgroundColor = colorArray[i];
-    pixel.classList.add('pixel-div');
+    // const pixel = document.createElement('div');
+    const image = [];
+    image.push(
+      <Pixl
+        className="pixel-div"
+        style={{
+          backgroundColor: colorArray[i],
+        }}
+      />
+    );
+    // pixel.style.backgroundColor = colorArray[i];
+    // pixel.classList.add('pixel-div');
     if (imageObject.height === imageObject.width) {
-      pixel.style.width = `${Math.round(500 / imageObject.height)}px)`;
+      pixel.style.width = `${Math.round(500 / imageObject.height)}px`;
       pixel.style.height = `${Math.round(500 / imageObject.height)}px`;
       canvas.style.height = `${
         imageObject.height * Math.round(500 / imageObject.height)

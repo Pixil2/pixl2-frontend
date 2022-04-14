@@ -10,12 +10,13 @@ export default function Grid() {
 
   console.log(image);
 
+  const area = image.height * image.width;
   // useEffect(() => {
   //   const res = createImage('title', 10, 10);
   //   // console.log(res);
   // }, []);
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < area; i++) {
     array.push(<Pixl />);
   }
   return (
