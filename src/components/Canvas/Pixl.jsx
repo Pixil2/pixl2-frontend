@@ -1,18 +1,9 @@
-import { useContext } from 'react';
 import styles from './Pixl.css';
-import { imageContext } from '../../context/ImageContext';
 
-export default function Pixl({ background, index, hello }) {
-  const { image, eraser } = useContext(imageContext);
-  const eraserArr = eraser.colors;
-  const colorArr = image.colors;
-
-  const handleClick = () => {
-    console.log(index);
-  };
+export default function Pixl({ background, handleClick, index }) {
   return (
     <div
-      onClick={handleClick}
+      onClick={() => handleClick(index)}
       className={styles.Pixl}
       style={{ background }}
     ></div>
