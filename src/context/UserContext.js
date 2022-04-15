@@ -4,6 +4,7 @@ import {
   useContext,
   useEffect,
   useState,
+  useMemo,
 } from 'react';
 
 import { getCurrentUser, signIn, signOut } from '../services/users';
@@ -33,12 +34,23 @@ export const UserProvider = ({ children }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  export const useCurrentUser = () => {
-    const context = useContext(UserContext);
+  const state = useMemo(
+    () => ({ loading, user, logout, login }),
+    [loading, user, logout, login]
+  );
 
-    if (context === undefined)
-      throw new Error('useAuth must be used within UserProvider');
+  return (
+    <UserContext.Provider value={state}>
+      {renderView({ ...state, children })}
+    </UserContext.Provider>
+  );
+};
 
-    return { logout: context.logout, login: context.login };
-  };
+export const useCurrentUser = () => {
+  const context = useContext(UserContext);
+
+  if (context === undefined)
+    throw new Error('useAuth must be used within UserProvider');
+
+  return { logout: context.logout, login: context.login };
 };
