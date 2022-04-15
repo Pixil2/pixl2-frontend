@@ -12,11 +12,11 @@
 .signIn {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .link {
-  margin-right: 25px;
+  margin-right: 20px;
 }
