@@ -4,7 +4,6 @@ import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
 export default function Grid({ image, setImage }) {
-  // const [image, setImage] = useState(createImage('title', 10, 10));
   const [pixelArray, setPixelArray] = useState([]);
 
   function renderImage(imageObject) {
