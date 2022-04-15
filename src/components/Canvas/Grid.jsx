@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { createImage } from '../../utils/grid';
 import styles from './Grid.css';
 import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid() {
-  const [image, setImage] = useState(createImage('title', 10, 10));
+export default function Grid({ image, setImage }) {
+  // const [image, setImage] = useState(createImage('title', 10, 10));
   const [pixelArray, setPixelArray] = useState([]);
 
   function renderImage(imageObject) {
-    const colorArray = imageObject.colors;
+    const colorArray = imageObject.colorArray;
     const area = imageObject.height * imageObject.width;
     const image = [];
 
@@ -44,9 +43,9 @@ export default function Grid() {
     setPixelArray(image);
   }
 
-  const handleClick = (index) => {
+  const handleClick = async (index) => {
     const newImage = { ...image };
-    newImage.colors[index] = 'rgb(0, 0, 0)';
+    newImage.colorArray[index] = 'rgb(0, 0, 0)';
 
     setImage(newImage);
   };
