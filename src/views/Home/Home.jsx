@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Layout/Footer';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
 
@@ -20,6 +21,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
