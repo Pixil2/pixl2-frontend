@@ -3,11 +3,10 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from 'react';
 
-import { signIn, signOut } from '../services/users';
+import { getCurrentUser, signIn, signOut } from '../services/users';
 
 const UserContext = createContext();
 
@@ -27,4 +26,19 @@ export const UserProvider = ({ children }) => {
   const logout = useCallback(() => {
     signOut().then(() => setUser(null));
   }, []);
+
+  useEffect(() => {
+    getCurrentUser()
+      .then(setUser)
+      .finally(() => setLoading(false));
+  }, []);
+
+  export const useCurrentUser = () => {
+    const context = useContext(UserContext);
+
+    if (context === undefined)
+      throw new Error('useAuth must be used within UserProvider');
+
+    return { logout: context.logout, login: context.login };
+  };
 };

@@ -21,3 +21,15 @@ export const signOut = async () => {
 
   return res.ok;
 };
+
+export const getCurrentUser = async () => {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/users/me`, {
+      credentials: 'include',
+    });
+
+    return res.json();
+  } catch (error) {
+    return null;
+  }
+};
