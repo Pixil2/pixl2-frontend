@@ -9,7 +9,7 @@ export function ProvideImage({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setImage(createImage('title', 15, 15));
+    setImage(createImage('title', 17, 17));
     setEraser(createImage('eraser', 10, 10));
     setLoading(false);
   }, [loading]);

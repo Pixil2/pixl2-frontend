@@ -6,6 +6,9 @@ import { imageContext } from '../../context/ImageContext';
 export default function Grid(tool) {
   const { image } = useContext(imageContext);
   const array = renderImage(image);
+  const pixelClick = () => {
+    console.log('array', array[i]);
+  };
 
   return (
     <div

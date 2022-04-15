@@ -4,10 +4,11 @@ import Toolbar from '../../components/Canvas/ToolBar';
 
 export default function Canvas() {
   const [tool, setTool] = useState('pencil');
+  const [color, setColor] = useState('black');
 
   return (
     <div>
-      <Grid tool={tool} />
+      <Grid tool={tool} color={color} />
       <Toolbar tool={tool} setTool={setTool} />
     </div>
   );
