@@ -1,0 +1,19 @@
+.Home {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.signIn {
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  margin-right: 25px;
+}

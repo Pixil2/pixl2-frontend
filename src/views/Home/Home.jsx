@@ -1,19 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
+import styles from './Home.css';
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <main>
-        <h4>Pixl description</h4>
-        <Link>
-          <button>Sign In with Github</button>
-        </Link>
-        <Link to="/canvas">
-          <p>Continue as Guest</p>
-        </Link>
+      <main className={styles.Home}>
+        <div className={styles.leftSide}>
+          <h4>Pixl description</h4>
+          <div className={styles.signIn}>
+            <Link>
+              <button className={styles.link}>Sign In with Github</button>
+            </Link>
+            <Link to="/canvas">
+              <button>Continue as Guest</button>
+            </Link>
+          </div>
+        </div>
       </main>
     </div>
   );
