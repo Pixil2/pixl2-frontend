@@ -5,6 +5,9 @@ import Header from '../../components/Layout/Header';
 import styles from './Home.css';
 
 export default function Home() {
+  const onClick = () => {
+    window.location.href = './canvas';
+  };
   return (
     <div>
       <Header />
@@ -16,7 +19,7 @@ export default function Home() {
               <button className={styles.link}>Sign In with Github</button>
             </a>
             <Link to="/canvas">
-              <button>Continue as Guest</button>
+              <button onClick={onClick}>Continue as Guest</button>
             </Link>
           </div>
         </div>

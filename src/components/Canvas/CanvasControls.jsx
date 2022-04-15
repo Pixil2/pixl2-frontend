@@ -11,7 +11,7 @@ export default function CanvasControls({ image }) {
     image = { ...image, userId: user.id };
     await saveImage(image);
 
-    history.push('/profile');
+    window.location.href = './profile';
   };
 
   return (
