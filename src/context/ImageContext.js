@@ -20,6 +20,7 @@ export function ProvideImage({ children }) {
     <imageContext.Provider
       value={{
         image,
+        setImage,
         eraser,
         loading,
         setLoading,
