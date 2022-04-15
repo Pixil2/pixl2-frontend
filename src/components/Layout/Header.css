@@ -1,0 +1,13 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.gallery {
+  margin-right: 25px;
+}
