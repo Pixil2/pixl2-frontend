@@ -4,10 +4,12 @@ import styles from './Grid.css';
 import { imageContext } from '../../context/ImageContext';
 
 export default function Grid(tool) {
-  const { image } = useContext(imageContext);
-  const array = renderImage(image);
+  const { image, index, setPixelArray } = useContext(imageContext);
+
+  const pixelArray = renderImage(image);
+
   const pixelClick = () => {
-    console.log('array', array[i]);
+    console.log('array', pixelArray[i]);
   };
 
   return (
@@ -18,7 +20,7 @@ export default function Grid(tool) {
         gridTemplateRows: `repeat(${image.height}, 1fr)`,
       }}
     >
-      {array.map((item) => item)}
+      {pixelArray.map((item) => item)}
     </div>
   );
 }

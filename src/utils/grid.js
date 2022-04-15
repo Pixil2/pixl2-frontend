@@ -60,7 +60,7 @@ export function renderImage(imageObject) {
     if (imageObject.height >= imageObject.width) {
       image.push(
         <Pixl
-          index={i}
+          pixelIndex={i}
           key={uuid()}
           background={colorArray[i]}
           width={`${Math.round(500 / imageObject.height)}px`}
@@ -70,7 +70,7 @@ export function renderImage(imageObject) {
     } else {
       image.push(
         <Pixl
-          index={i}
+          pixelIndex={i}
           key={uuid()}
           background={colorArray[i]}
           width={`${Math.round(500 / imageObject.width)}px`}
