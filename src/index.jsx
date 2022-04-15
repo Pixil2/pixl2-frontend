@@ -1,16 +1,16 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { StrictMode } from 'react';
 import App from './App';
 import { ProvideImage } from './context/ImageContext';
 import { UserProvider } from './context/UserContext';
+import { createRoot } from 'react-dom/client';
 
-render(
-  <React.StrictMode>
-    <ProvideImage>
-      <UserProvider>
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <UserProvider>
+      <ProvideImage>
         <App />
-      </UserProvider>
-    </ProvideImage>
-  </React.StrictMode>,
-  document.getElementById('root')
+      </ProvideImage>
+    </UserProvider>
+  </StrictMode>
 );

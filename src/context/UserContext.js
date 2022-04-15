@@ -8,6 +8,7 @@ import {
 } from 'react';
 
 import { getCurrentUser, signIn, signOut } from '../services/users';
+import { renderView } from '../utils/renderView';
 
 const UserContext = createContext();
 

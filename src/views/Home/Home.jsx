@@ -12,9 +12,9 @@ export default function Home() {
         <div className={styles.leftSide}>
           <h4>Pixl description</h4>
           <div className={styles.signIn}>
-            <Link>
+            <a href="http://localhost:7890/api/v1/users/login">
               <button className={styles.link}>Sign In with Github</button>
-            </Link>
+            </a>
             <Link to="/canvas">
               <button>Continue as Guest</button>
             </Link>
