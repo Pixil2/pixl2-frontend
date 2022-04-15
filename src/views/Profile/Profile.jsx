@@ -1,23 +1,28 @@
 import { useEffect, useState } from 'react';
-import { getImageById } from '../../services/images';
+import { getUserImages } from '../../services/images';
 import Grid from '../../components/Canvas/Grid';
+import { getCurrentUser } from '../../services/users';
+import { v4 as uuid } from 'uuid';
+import styles from './Profile.css';
 
 export default function Profile() {
-  const [currentImage, setCurrentImage] = useState({});
+  const [currentImages, setCurrentImages] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await getImageById(1);
-      setCurrentImage(res);
+      const user = await getCurrentUser();
+      const res = await getUserImages(user.id);
+      console.log('res', res);
+      setCurrentImages(res);
     };
     fetch();
   }, []);
 
-  console.log('currentImage', currentImage);
-
   return (
-    <div>
-      <Grid image={currentImage} />
+    <div className={styles.Profile}>
+      {currentImages.map((item) => {
+        return <Grid key={uuid()} image={item} />;
+      })}
     </div>
   );
 }
