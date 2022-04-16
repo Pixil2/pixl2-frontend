@@ -3,8 +3,18 @@ import styles from './Grid.css';
 import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid({ image, setImage }) {
+export default function Grid({ image, setImage, tool }) {
   const [pixelArray, setPixelArray] = useState([]);
+  const [rainbowIndex, setRainbowIndex] = useState(0);
+  const rainbowArray = [
+    '#f54242',
+    '#f59642',
+    '#f5e942',
+    '#84f542',
+    '#42ddf5',
+    '#b15beb',
+    '#f779b4',
+  ];
 
   function renderImage(imageObject) {
     const colorArray = imageObject.colorArray;
@@ -44,8 +54,25 @@ export default function Grid({ image, setImage }) {
 
   const handleClick = async (index) => {
     const newImage = { ...image };
-    newImage.colorArray[index] = 'rgb(0, 0, 0)';
+    let i = rainbowIndex;
 
+    if (tool === 'pencil') {
+      newImage.colorArray[index] = 'rgb(0, 0, 0)';
+    } else if (tool === 'eraser') {
+      //set up eraser background and match [index]
+    } else if (tool === 'rainbow') {
+      if (rainbowIndex === 7) {
+        i = 0;
+        newImage.colorArray[index] = rainbowArray[rainbowIndex];
+        i++;
+        setRainbowIndex(i);
+      } else {
+        newImage.colorArray[index] = rainbowArray[rainbowIndex];
+        i++;
+        setRainbowIndex(i);
+      }
+    }
+    console.log(rainbowIndex);
     setImage(newImage);
   };
 
@@ -62,6 +89,7 @@ export default function Grid({ image, setImage }) {
       }}
     >
       {pixelArray.map((item) => item)}
+      {tool}
     </div>
   );
 }

@@ -7,7 +7,8 @@ export default function Toolbar({ tool, setTool }) {
     <div className="Toolbar">
       <button onClick={() => handleClick('pencil')}>Pencil</button>
       <button onClick={() => handleClick('eraser')}>Eraser</button>
-      {tool}
+      <button onClick={() => handleClick('clear all')}>Clear All</button>
+      <button onClick={() => handleClick('rainbow')}>Rainbow</button>
     </div>
   );
 }
