@@ -6,6 +6,7 @@ import { createImage } from '../../utils/grid';
 import styles from './Canvas.css';
 import CanvasForm from '../../components/Canvas/CanvasForm';
 import { useEffect } from 'react';
+import Prompt from '../../components/Canvas/Prompt';
 
 export default function Canvas() {
   const [created, setCreated] = useState(false);
@@ -29,6 +30,7 @@ export default function Canvas() {
 
   return (
     <div className={styles.Canvas}>
+      <Prompt />
       <Grid
         tool={tool}
         image={image}

@@ -20,14 +20,13 @@ export default function Profile() {
     fetch();
   }, []);
 
-  const handlePopup = () => {
-    setPopUp(!popUp);
+  const handleClick = () => {
+    window.location.href = './canvas';
   };
 
   return (
     <div className={styles.Profile}>
-      <button onClick={handlePopup}>Create Image</button>
-      {popUp && <PopUp />}
+      <button onClick={handleClick}>Create Image</button>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item) => {
           return (
