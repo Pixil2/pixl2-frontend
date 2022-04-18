@@ -4,3 +4,11 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* .image {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 250px;
+  width: 250px;
+} */
