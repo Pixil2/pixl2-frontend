@@ -4,11 +4,10 @@ import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
-import PopUp from '../PopUp/PopUp';
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   const [currentImages, setCurrentImages] = useState([]);
-  const [popUp, setPopUp] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
@@ -20,14 +19,15 @@ export default function Profile() {
     fetch();
   }, []);
 
-  const handlePopup = () => {
-    setPopUp(!popUp);
+  const onClick = () => {
+    window.location.href = './canvas';
   };
 
   return (
     <div className={styles.Profile}>
-      <button onClick={handlePopup}>Create Image</button>
-      {popUp && <PopUp />}
+      <Link to="/canvas">
+        <button onClick={onClick}>Create Image</button>
+      </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item) => {
           return (
