@@ -1,6 +1,7 @@
 export default function Toolbar({ eraser, image, setImage, setTool }) {
   const handleClick = (selected) => {
     setTool(selected);
+    console.log('selected :>> ', selected);
   };
 
   const handleClear = () => {

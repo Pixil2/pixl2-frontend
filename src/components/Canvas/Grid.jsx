@@ -77,7 +77,7 @@ export default function Grid({ image, setImage, tool, eraser }) {
 
   useEffect(() => {
     renderImage(image);
-  }, [image]);
+  }, [image, tool]);
 
   return (
     <div
