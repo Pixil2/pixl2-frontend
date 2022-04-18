@@ -88,7 +88,6 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
       }}
     >
       {pixelArray.map((item) => item)}
-      {tool}
     </div>
   );
 }
