@@ -1,12 +1,12 @@
 import React from 'react';
 import useForm from '../../hooks/useForm';
 
-export default function PopUp({ image, setImage }) {
-  console.log(image.title);
+export default function PopUp({ image }) {
+  console.log(image);
   const { formState, formError, handleFormChange, setFormError } = useForm({
-    title: image.title,
-    height: image.height,
-    width: image.width,
+    title: image?.title,
+    height: image?.height,
+    width: image?.width,
   });
 
   const handleSubmit = async (e) => {
