@@ -1,4 +1,11 @@
-export default function Toolbar({ eraser, image, setImage, setTool }) {
+export default function Toolbar({
+  eraser,
+  image,
+  setImage,
+  setTool,
+  color,
+  setColor,
+}) {
   const handleClick = (selected) => {
     setTool(selected);
     console.log('selected :>> ', selected);
@@ -18,7 +25,12 @@ export default function Toolbar({ eraser, image, setImage, setTool }) {
       <button onClick={() => handleClick('eraser')}>Eraser</button>
       <button onClick={() => handleClear()}>Clear All</button>
       <button onClick={() => handleClick('rainbow')}>Rainbow</button>
+      <input
+        type="color"
+        value={color}
+        onChange={(e) => setColor(e.target.value)}
+      />
     </div>
   );
 }
-//rainbow //color palette //clear all
+//color palette

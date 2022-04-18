@@ -9,16 +9,25 @@ export default function Canvas() {
   const [image, setImage] = useState(createImage('title', 10, 10));
   const [eraser, setEraser] = useState(createImage('eraser', 10, 10));
   const [tool, setTool] = useState('pencil');
+  const [color, setColor] = useState('#000000');
 
   return (
     <div className={styles.Canvas}>
-      <Grid tool={tool} image={image} setImage={setImage} eraser={eraser} />
+      <Grid
+        tool={tool}
+        image={image}
+        setImage={setImage}
+        eraser={eraser}
+        color={color}
+      />
       <Toolbar
         tool={tool}
         setTool={setTool}
         eraser={eraser}
         image={image}
         setImage={setImage}
+        color={color}
+        setColor={setColor}
       />
       <CanvasControls image={image} />
     </div>
