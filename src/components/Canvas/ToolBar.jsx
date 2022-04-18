@@ -8,7 +8,12 @@ export default function Toolbar({
 }) {
   const handleClick = (selected) => {
     setTool(selected);
-    console.log('selected :>> ', selected);
+  };
+
+  const handleColor = (e) => {
+    console.log('e', e.target.value);
+    setColor(e.target.value);
+    setTool('pencil');
   };
 
   const handleClear = () => {
@@ -22,11 +27,7 @@ export default function Toolbar({
   return (
     <div className="Toolbar">
       <button onClick={() => handleClick('pencil')}>Pencil</button>
-      <input
-        type="color"
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
-      />
+      <input type="color" value={color} onChange={(e) => handleColor(e)} />
       <button onClick={() => handleClick('eraser')}>Eraser</button>
       <button onClick={() => handleClear()}>Clear All</button>
       <button onClick={() => handleClick('rainbow')}>Rainbow</button>
