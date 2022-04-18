@@ -11,5 +11,5 @@ export default function useForm(inputs = {}) {
     });
   };
 
-  return { formState, formError, handleFormChange, setFormError };
+  return { formState, formError, setFormState, handleFormChange, setFormError };
 }
