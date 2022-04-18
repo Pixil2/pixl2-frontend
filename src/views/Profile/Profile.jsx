@@ -31,8 +31,8 @@ export default function Profile() {
       <div className={styles.Profile}>
         {currentImages.map((item) => {
           return (
-            <div>
-              <Grid key={uuid()} image={item} />
+            <div key={uuid()}>
+              <Grid image={item} />
             </div>
           );
         })}
