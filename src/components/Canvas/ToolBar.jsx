@@ -22,14 +22,14 @@ export default function Toolbar({
   return (
     <div className="Toolbar">
       <button onClick={() => handleClick('pencil')}>Pencil</button>
-      <button onClick={() => handleClick('eraser')}>Eraser</button>
-      <button onClick={() => handleClear()}>Clear All</button>
-      <button onClick={() => handleClick('rainbow')}>Rainbow</button>
       <input
         type="color"
         value={color}
         onChange={(e) => setColor(e.target.value)}
       />
+      <button onClick={() => handleClick('eraser')}>Eraser</button>
+      <button onClick={() => handleClear()}>Clear All</button>
+      <button onClick={() => handleClick('rainbow')}>Rainbow</button>
     </div>
   );
 }
