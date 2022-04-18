@@ -3,7 +3,7 @@ import styles from './Grid.css';
 import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid({ image, setImage, tool }) {
+export default function Grid({ image, setImage, tool, eraser }) {
   const [pixelArray, setPixelArray] = useState([]);
   const [rainbowIndex, setRainbowIndex] = useState(0);
   const rainbowArray = [
@@ -52,14 +52,14 @@ export default function Grid({ image, setImage, tool }) {
     setPixelArray(image);
   }
 
-  const handleClick = async (index) => {
+  const handleClick = (index) => {
     const newImage = { ...image };
     let i = rainbowIndex;
 
     if (tool === 'pencil') {
       newImage.colorArray[index] = 'rgb(0, 0, 0)';
     } else if (tool === 'eraser') {
-      //set up eraser background and match [index]
+      newImage.colorArray[index] = eraser.colorArray[index];
     } else if (tool === 'rainbow') {
       if (rainbowIndex === 7) {
         i = 0;
@@ -72,7 +72,6 @@ export default function Grid({ image, setImage, tool }) {
         setRainbowIndex(i);
       }
     }
-    console.log(rainbowIndex);
     setImage(newImage);
   };
 
