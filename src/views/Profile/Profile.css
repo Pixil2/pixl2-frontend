@@ -1,14 +1,25 @@
 .Profile {
   display: flex;
-  gap: 6vw;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* .image {
+.ProfileContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 2vw;
+  padding-top: 6vw;
+}
+
+.profileGrid {
+  border: 5px solid black;
+}
+
+.image {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   height: 250px;
   width: 250px;
-} */
+}

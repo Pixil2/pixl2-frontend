@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getUserImages } from '../../services/images';
-import Grid from '../../components/Canvas/Grid';
+import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
@@ -25,14 +25,14 @@ export default function Profile() {
   };
 
   return (
-    <div>
+    <div className={styles.Profile}>
       <button onClick={handlePopup}>Create Image</button>
       {popUp && <PopUp />}
-      <div className={styles.Profile}>
+      <div className={styles.ProfileContainer}>
         {currentImages.map((item) => {
           return (
             <div key={uuid()}>
-              <Grid image={item} />
+              <ProfileGrid image={item} />
             </div>
           );
         })}
