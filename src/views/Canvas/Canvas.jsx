@@ -9,26 +9,29 @@ import CanvasForm from '../../components/Canvas/CanvasForm';
 export default function Canvas() {
   const [canvasInfo, setCanvasInfo] = useState();
   const [image, setImage] = useState(createImage('title', 10, 10));
+  const [eraser, setEraser] = useState(createImage('eraser', 10, 10));
   const [tool, setTool] = useState('pencil');
-  const [color, setColor] = useState('black');
-  const [created, setCreated] = useState(false);
-  console.log(canvasInfo);
+  const [color, setColor] = useState('#000000');
+
   return (
     <div className={styles.Canvas}>
-      {!created && (
-        <CanvasForm
-          image={image}
-          setCanvasInfo={setCanvasInfo}
-          setCreated={setCreated}
-        />
-      )}
-      {created && (
-        <>
-          <Grid tool={tool} color={color} image={image} setImage={setImage} />
-          <Toolbar tool={tool} setTool={setTool} />
-          <CanvasControls image={image} />
-        </>
-      )}
+      <Grid
+        tool={tool}
+        image={image}
+        setImage={setImage}
+        eraser={eraser}
+        color={color}
+      />
+      <Toolbar
+        tool={tool}
+        setTool={setTool}
+        eraser={eraser}
+        image={image}
+        setImage={setImage}
+        color={color}
+        setColor={setColor}
+      />
+      <CanvasControls image={image} />
     </div>
   );
 }
