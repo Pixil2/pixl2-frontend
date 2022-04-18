@@ -17,9 +17,8 @@ export default function App() {
         <Route exact path="/canvas">
           <Canvas />
         </Route>
-        <Route exact path="/canvas/:id">
-          //Continue as guest
-          <Canvas />
+        <Route exact path="/canvas/edit/:id">
+          <Canvas edit />
         </Route>
         <Route exact path="about">
           <AboutUs />

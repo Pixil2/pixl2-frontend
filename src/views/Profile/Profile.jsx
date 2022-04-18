@@ -23,6 +23,10 @@ export default function Profile() {
     window.location.href = './canvas';
   };
 
+  const editBtn = () => {
+    
+  }
+
   return (
     <div className={styles.Profile}>
       <Link to="/canvas">
@@ -32,7 +36,10 @@ export default function Profile() {
         {currentImages.map((item) => {
           return (
             <div key={uuid()}>
+              <p>{item.title}</p>
               <ProfileGrid image={item} />
+              <button>edit</button>
+              <button>delete</button>
             </div>
           );
         })}
