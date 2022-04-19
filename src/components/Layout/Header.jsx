@@ -5,10 +5,17 @@ import styles from './Header.css';
 export default function Header() {
   return (
     <header className={styles.Header}>
-      <h1 className={styles.logo}>PIXL</h1>
-      <Link to="/profile">
-        <p className={styles.gallery}>Gallery</p>
-      </Link>
+      <div className={styles.headerLogo}>
+        <h1>PIXL 2</h1>
+      </div>
+      <div className={styles.headerLinkContainer}>
+        <Link className={styles.headerLink} to="/profile">
+          Profile
+        </Link>
+        <Link className={styles.headerLink} to="/about">
+          About
+        </Link>
+      </div>
     </header>
   );
 }
