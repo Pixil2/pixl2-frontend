@@ -4,8 +4,12 @@ import styles from './Home.css';
 import pixelImg from '../../assets/rainbowpattern.png';
 
 export default function Home() {
-  const onClick = () => {
+  const handleContinue = () => {
     window.location.href = './canvas';
+  };
+
+  const handleSignIn = () => {
+    window.location.href = 'http://localhost:7890/api/v1/users/login';
   };
 
   return (
@@ -18,10 +22,10 @@ export default function Home() {
             time.
           </h4>
           <div className={styles.signIn}>
-            <a href="http://localhost:7890/api/v1/users/login">
-              <button className={styles.button}>Sign-in with Github</button>
-            </a>
-            <button onClick={onClick} className={styles.button}>
+            <button className={styles.button} onClick={handleSignIn}>
+              Sign-in with Github
+            </button>
+            <button onClick={handleContinue} className={styles.button}>
               Continue as Guest
             </button>
           </div>

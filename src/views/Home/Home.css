@@ -1,8 +1,7 @@
 .Home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: space-around;
+  align-items: center;
 }
 
 .homeContainer {
@@ -10,7 +9,7 @@
   flex-direction: row;
   width: 80vw;
   justify-content: space-between;
-  margin: 0 10vh 10vh 10vh;
+  margin: 10vh 10vh 10vh 10vh;
 }
 
 .leftSide {
@@ -22,26 +21,26 @@
 .leftSideCaption {
   width: 75%;
   font-size: 3vw;
-  margin-top: 125px;
+  margin-top: 15vh;
 }
 
 .pixelImg {
-  height: 500px;
-  border: 6px solid black;
+  width: 40vw;
+  border: 0.5vw solid black;
 }
 
 .signIn {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 2vw;
 }
 
 .button {
   background-color: white;
-  border: black 3px solid;
-  padding: 8px;
+  border: black 0.3vw solid;
+  padding: 1vw;
   font-family: monospace;
-  font-size: 10px;
+  font-size: 1vw;
 }
 
 .button:hover {
