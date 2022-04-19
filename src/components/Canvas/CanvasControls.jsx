@@ -5,11 +5,13 @@ import { getCurrentUser } from '../../services/users';
 
 export default function CanvasControls({ image, edit }) {
   const [tagList, setTagList] = useState([]);
+  const [tag, setTag] = useState('unselected');
 
   useEffect(() => {
     const fetchTags = async () => {
       const res = await getAllTags();
-      setTagList(res);
+      console.log('res', res);
+      setTagList([{ id: 'unselected', name: 'Unselected' }, ...res]);
     };
     fetchTags();
   }, []);
@@ -17,8 +19,14 @@ export default function CanvasControls({ image, edit }) {
   const handleSave = async (image) => {
     const user = await getCurrentUser();
     image = { ...image, userId: user.id };
-    await saveImage(image);
-    window.location.href = './profile';
+    let selectedTag = {};
+    tagList.map((item) => {
+      if (item.name === tag) {
+        selectedTag = item;
+      }
+    });
+    await saveImage(image, selectedTag.id);
+    // if (!tag) window.location.href = './profile';
   };
 
   const handleUpdate = async (image) => {
@@ -28,11 +36,12 @@ export default function CanvasControls({ image, edit }) {
 
   return (
     <div>
-      <select>
+      <select value={tag} onChange={(e) => setTag(e.target.value)}>
         {tagList.map((item) => {
           return <option key={item.id}>{item.name}</option>;
         })}
       </select>
+      {tag}
       {!edit && <button onClick={() => handleSave(image)}>Save</button>}
       {edit && <button onClick={() => handleUpdate(image)}>Update</button>}
     </div>

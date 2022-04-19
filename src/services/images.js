@@ -15,7 +15,7 @@ export const getUserImages = async (userId) => {
   return res.json();
 };
 
-export const saveImage = async (image) => {
+export const saveImage = async (image, tagId) => {
   await fetch(`${process.env.API_URL}/api/v1/images`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

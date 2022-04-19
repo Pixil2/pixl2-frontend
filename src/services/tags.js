@@ -4,3 +4,12 @@ export const getAllTags = async () => {
   });
   return res.json();
 };
+
+export const saveTag = async (imageId, tagId) => {
+  await fetch(`${process.env.API_URL}/api/v1/images/${imageId}/tags/${tagId}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    mode: 'cors',
+  });
+};
