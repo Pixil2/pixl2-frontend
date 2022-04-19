@@ -12,7 +12,7 @@ export default function Home() {
       <main className={styles.homeContainer}>
         <div className={styles.leftSide}>
           <h4 className={styles.leftSideCaption}>
-            An interactive app that brings your creativity to life one pixel at
+            A interactive tool that brings your creativity to life one pixel at
             a time.
           </h4>
           <div className={styles.signIn}>
