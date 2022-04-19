@@ -37,47 +37,11 @@ export function createImage(title, heightInput, widthInput) {
     title: title,
     height: heightInput,
     width: widthInput,
-    colors: colorArray,
+    colorArray: colorArray,
   };
   return newImage;
 }
 
 function isEven(num) {
   return num % 2 === 0;
-}
-
-// export function updateImage(imageObject, colorArray) {
-//   imageObject.colors = colorArray;
-//   return imageObject;
-// }
-
-export function renderImage(imageObject) {
-  const colorArray = imageObject.colors;
-  const area = imageObject.height * imageObject.width;
-  const image = [];
-
-  for (let i = 0; i < area; i++) {
-    if (imageObject.height >= imageObject.width) {
-      image.push(
-        <Pixl
-          index={i}
-          key={uuid()}
-          background={colorArray[i]}
-          width={`${Math.round(500 / imageObject.height)}px`}
-          height={`${Math.round(500 / imageObject.height)}px`}
-        />
-      );
-    } else {
-      image.push(
-        <Pixl
-          index={i}
-          key={uuid()}
-          background={colorArray[i]}
-          width={`${Math.round(500 / imageObject.width)}px`}
-          height={`${Math.round(500 / imageObject.width)}px`}
-        />
-      );
-    }
-  }
-  return image;
 }

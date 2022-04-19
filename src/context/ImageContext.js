@@ -7,15 +7,29 @@ export function ProvideImage({ children }) {
   const [image, setImage] = useState({});
   const [eraser, setEraser] = useState({});
   const [loading, setLoading] = useState(true);
+  const [index, setIndex] = useState();
+  const [pixelArray, setPixelArray] = useState([]);
 
   useEffect(() => {
-    setImage(createImage('title', 17, 17));
+    setImage(createImage('title', 10, 10));
     setEraser(createImage('eraser', 10, 10));
     setLoading(false);
   }, [loading]);
 
   return (
-    <imageContext.Provider value={{ image, eraser, loading, setLoading }}>
+    <imageContext.Provider
+      value={{
+        image,
+        setImage,
+        eraser,
+        loading,
+        setLoading,
+        index,
+        setIndex,
+        pixelArray,
+        setPixelArray,
+      }}
+    >
       {children}
     </imageContext.Provider>
   );

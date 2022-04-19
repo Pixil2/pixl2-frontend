@@ -6,6 +6,9 @@ import styles from './Home.css';
 import pixelImg from '../../assets/rainbowpattern.png';
 
 export default function Home() {
+  const onClick = () => {
+    window.location.href = './canvas';
+  };
   return (
     <div className={styles.Home}>
       <Header />
@@ -21,6 +24,7 @@ export default function Home() {
             </a>
             <Link to="/canvas">
               <button className={styles.button}>Continue as Guest</button>
+              <button onClick={onClick}>Continue as Guest</button>
             </Link>
           </div>
         </div>

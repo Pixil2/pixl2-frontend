@@ -1,0 +1,8 @@
+.ProfileGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+}

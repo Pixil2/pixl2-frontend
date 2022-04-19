@@ -19,11 +19,11 @@ export default function App() {
           <Route path="/canvas">
             <Canvas />
           </Route>
-          <Route path="/canvas/:id">
+          <Route path="/canvas/edit/:id">
             //Continue as guest
             <Canvas />
           </Route>
-          <Route path="about">
+          <Route path="/about">
             <AboutUs />
           </Route>
         </Switch>
