@@ -13,7 +13,6 @@ export default function Profile() {
     const fetch = async () => {
       const user = await getCurrentUser();
       const res = await getUserImages(user.id);
-      console.log('res', res);
       setCurrentImages(res);
     };
     fetch();
@@ -23,9 +22,7 @@ export default function Profile() {
     window.location.href = './canvas';
   };
 
-  const editBtn = () => {
-    
-  }
+  const editBtn = () => {};
 
   return (
     <div className={styles.Profile}>

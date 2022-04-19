@@ -25,14 +25,12 @@ export default function Canvas({ edit = false }) {
       setImage(createImage(title, size, size));
       setEraser(createImage('eraser', size, size));
     } else {
-      //find image by id
       const fetchImage = async () => {
         const res = await getImageById(params.id);
         setImage(res);
         setEraser(createImage('eraser', res.height, res.width));
       };
       fetchImage();
-      //create and set image
       //conditionally render button logic
     }
   }, [canvasInfo, edit]);
@@ -59,7 +57,7 @@ export default function Canvas({ edit = false }) {
         color={color}
         setColor={setColor}
       />
-      <CanvasControls image={image} />
+      <CanvasControls image={image} edit={edit} />
     </div>
   );
 }
