@@ -13,7 +13,6 @@ export default function Profile() {
     const fetch = async () => {
       const user = await getCurrentUser();
       const res = await getUserImages(user.id);
-      console.log('res', res);
       setCurrentImages(res);
     };
     fetch();
@@ -22,6 +21,8 @@ export default function Profile() {
   const onClick = () => {
     window.location.href = './canvas';
   };
+
+  const editBtn = () => {};
 
   return (
     <div className={styles.Profile}>
@@ -32,7 +33,10 @@ export default function Profile() {
         {currentImages.map((item) => {
           return (
             <div key={uuid()}>
+              <p>{item.title}</p>
               <ProfileGrid image={item} />
+              <button>edit</button>
+              <button>delete</button>
             </div>
           );
         })}

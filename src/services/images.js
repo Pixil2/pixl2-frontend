@@ -16,11 +16,21 @@ export const getUserImages = async (userId) => {
 };
 
 export const saveImage = async (image) => {
-  console.log(image);
-  const res = await fetch(`${process.env.API_URL}/api/v1/images`, {
+  await fetch(`${process.env.API_URL}/api/v1/images`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
+    mode: 'cors',
+    body: JSON.stringify(image),
+  });
+};
+
+export const updateImage = async (image) => {
+  console.log('FETCH image', image);
+  await fetch(`${process.env.API_URL}/api/v1/images/${image.id}`, {
+    method: 'PATCH',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
     mode: 'cors',
     body: JSON.stringify(image),
   });

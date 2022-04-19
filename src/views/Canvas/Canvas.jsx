@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import CanvasControls from '../../components/Canvas/CanvasControls';
 import Grid from '../../components/Canvas/Grid';
 import Toolbar from '../../components/Canvas/ToolBar';
@@ -7,25 +8,34 @@ import styles from './Canvas.css';
 import CanvasForm from '../../components/Canvas/CanvasForm';
 import { useEffect } from 'react';
 import Prompt from '../../components/Canvas/Prompt';
+import { getImageById } from '../../services/images';
 
-export default function Canvas() {
+export default function Canvas({ edit = false }) {
   const [created, setCreated] = useState(false);
   const [canvasInfo, setCanvasInfo] = useState({});
-  const [image, setImage] = useState();
-  const [eraser, setEraser] = useState(createImage('eraser', 10, 10));
+  const [image, setImage] = useState({});
+  const [eraser, setEraser] = useState({});
   const [tool, setTool] = useState('pencil');
   const [color, setColor] = useState('#000000');
+  const params = useParams();
 
   useEffect(() => {
-    if (canvasInfo) {
-      console.log(canvasInfo);
+    if (!edit) {
       const { title, size } = canvasInfo;
       setImage(createImage(title, size, size));
-      console.log('image', image);
+      setEraser(createImage('eraser', size, size));
+    } else {
+      const fetchImage = async () => {
+        const res = await getImageById(params.id);
+        setImage(res);
+        setEraser(createImage('eraser', res.height, res.width));
+      };
+      fetchImage();
+      //conditionally render button logic
     }
-  }, [canvasInfo]);
+  }, [canvasInfo, edit]);
 
-  if (!created)
+  if (!created && !edit)
     return <CanvasForm setCreated={setCreated} setCanvasInfo={setCanvasInfo} />;
 
   return (
@@ -47,7 +57,7 @@ export default function Canvas() {
         color={color}
         setColor={setColor}
       />
-      <CanvasControls image={image} />
+      <CanvasControls image={image} edit={edit} />
     </div>
   );
 }
