@@ -5,6 +5,7 @@ import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Layout/Header';
 
 export default function Profile() {
   const [currentImages, setCurrentImages] = useState([]);
@@ -34,6 +35,7 @@ export default function Profile() {
 
   return (
     <div className={styles.Profile}>
+      <Header />
       <Link to="/canvas">
         <button onClick={handleClick}>Create Image</button>
       </Link>

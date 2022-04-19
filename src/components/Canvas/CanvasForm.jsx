@@ -1,5 +1,7 @@
 import React from 'react';
 import useForm from '../../hooks/useForm';
+import Header from '../Layout/Header';
+import styles from '../../views/Canvas/Canvas.css';
 
 export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
   const { formState, formError, setFormState, handleFormChange, setFormError } =
@@ -22,8 +24,13 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className={styles.CanvasForm}>
+      <Header />
+      <form className={styles.CanvasFormInputs} onSubmit={handleSubmit}>
+        <p>
+          Let's get started! Please give your artwork a title and a size (1 -
+          50).
+        </p>
         <label>Title: </label>
         <input
           id="title"
@@ -41,7 +48,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           onChange={handleFormChange}
         />
 
-        <button type="submit">submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

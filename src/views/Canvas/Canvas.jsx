@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 import Prompt from '../../components/Canvas/Prompt';
 import { getImageById } from '../../services/images';
 
+import Header from '../../components/Layout/Header';
+
 export default function Canvas({ edit = false }) {
   const [created, setCreated] = useState(false);
   const [canvasInfo, setCanvasInfo] = useState({});
@@ -39,6 +41,7 @@ export default function Canvas({ edit = false }) {
 
   return (
     <div className={styles.Canvas}>
+      <Header />
       <Prompt />
       <Grid
         tool={tool}
