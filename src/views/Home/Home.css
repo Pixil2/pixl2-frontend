@@ -43,3 +43,12 @@
   font-family: monospace;
   font-size: 10px;
 }
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+.button:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
+}
