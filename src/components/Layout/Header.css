@@ -8,15 +8,15 @@
 }
 
 .headerLogo {
-  font-size: 35px;
+  font-size: 3vw;
 }
 
 .headerLinkContainer {
   display: flex;
-  gap: 5vh;
+  gap: 4vw;
 }
 
 .headerLink {
-  font-size: 14px;
+  font-size: 1.3vw;
   font-family: monospace;
 }
