@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
 import pixelImg from '../../assets/rainbowpattern.png';
@@ -22,11 +21,9 @@ export default function Home() {
             <a href="http://localhost:7890/api/v1/users/login">
               <button className={styles.button}>Sign-in with Github</button>
             </a>
-            <Link to="/canvas">
-              <button onClick={onClick} className={styles.button}>
-                Continue as Guest
-              </button>
-            </Link>
+            <button onClick={onClick} className={styles.button}>
+              Continue as Guest
+            </button>
           </div>
         </div>
         <div className={styles.rightSide}>

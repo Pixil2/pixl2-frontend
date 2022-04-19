@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styles from './Header.css';
 
@@ -7,6 +6,7 @@ export default function Header() {
   const onClick = () => {
     window.location.href = './profile';
   };
+
   return (
     <header className={styles.Header}>
       <h1 className={styles.headerLogo}>PIXL 2</h1>
