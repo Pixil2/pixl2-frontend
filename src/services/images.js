@@ -26,12 +26,21 @@ export const saveImage = async (image) => {
 };
 
 export const updateImage = async (image) => {
-  console.log('FETCH image', image);
   await fetch(`${process.env.API_URL}/api/v1/images/${image.id}`, {
     method: 'PATCH',
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     mode: 'cors',
     body: JSON.stringify(image),
+  });
+};
+
+export const deleteImageById = async (id) => {
+  await fetch(`${process.env.API_URL}/api/v1/images/${id}`, {
+    method: 'DELETE',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    mode: 'cors',
+    // body: JSON.stringify(id),
   });
 };

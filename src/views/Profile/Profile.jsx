@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUserImages } from '../../services/images';
+import { getUserImages, deleteImageById } from '../../services/images';
 import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
@@ -18,18 +18,24 @@ export default function Profile() {
     fetch();
   }, []);
 
-  const onClick = () => {
+  const handleClick = () => {
     window.location.href = './canvas';
   };
 
-  const editBtn = (id) => {
+  const handleEdit = (id) => {
     window.location.href = `./canvas/edit/${id}`;
+  };
+
+  const handleDelete = async (id) => {
+    await deleteImageById(id);
+    const newCurrentImages = currentImages.filter((item) => item.id !== id);
+    setCurrentImages(newCurrentImages);
   };
 
   return (
     <div className={styles.Profile}>
       <Link to="/canvas">
-        <button onClick={onClick}>Create Image</button>
+        <button onClick={handleClick}>Create Image</button>
       </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item) => {
@@ -37,10 +43,18 @@ export default function Profile() {
             <div key={uuid()}>
               <p>{item.title}</p>
               <ProfileGrid image={item} />
-              <button value={item.id} onClick={(e) => editBtn(e.target.value)}>
+              <button
+                value={item.id}
+                onClick={(e) => handleEdit(e.target.value)}
+              >
                 edit
               </button>
-              <button>delete</button>
+              <button
+                value={item.id}
+                onClick={(e) => handleDelete(e.target.value)}
+              >
+                delete
+              </button>
             </div>
           );
         })}
