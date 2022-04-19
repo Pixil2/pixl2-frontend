@@ -9,9 +9,7 @@ export default function Header() {
   };
   return (
     <header className={styles.Header}>
-      <div className={styles.headerLogo}>
-        <h1>PIXL 2</h1>
-      </div>
+      <h1 className={styles.headerLogo}>PIXL 2</h1>
       <div className={styles.headerLinkContainer}>
         <Link className={styles.headerLink} onClick={onClick}>
           Profile

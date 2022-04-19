@@ -7,6 +7,10 @@
   width: 90vw;
 }
 
+.headerLogo {
+  font-size: 35px;
+}
+
 .headerLinkContainer {
   display: flex;
   gap: 5vh;
