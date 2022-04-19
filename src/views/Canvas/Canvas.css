@@ -38,11 +38,28 @@
   align-self: center;
 }
 
+.CanvasControls {
+  display: flex;
+  gap: 2vh;
+  margin-bottom: 10vh;
+}
+
+.canvasSelect {
+  margin-top: 1vh;
+  background-color: white;
+  border: black 0.3vw solid;
+  padding: 0.42vw;
+  font-family: monospace;
+  font-size: 1vw;
+  width: auto;
+  align-self: center;
+}
+
 .Prompt {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2.5vh;
+  margin-top: 2.5vh;
 }
 
 .ToolBar {
