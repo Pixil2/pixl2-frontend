@@ -22,7 +22,9 @@ export default function Profile() {
     window.location.href = './canvas';
   };
 
-  const editBtn = () => {};
+  const editBtn = (id) => {
+    window.location.href = `./canvas/edit/${id}`;
+  };
 
   return (
     <div className={styles.Profile}>
@@ -35,7 +37,9 @@ export default function Profile() {
             <div key={uuid()}>
               <p>{item.title}</p>
               <ProfileGrid image={item} />
-              <button>edit</button>
+              <button value={item.id} onClick={(e) => editBtn(e.target.value)}>
+                edit
+              </button>
               <button>delete</button>
             </div>
           );

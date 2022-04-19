@@ -31,7 +31,6 @@ export default function Canvas({ edit = false }) {
         setEraser(createImage('eraser', res.height, res.width));
       };
       fetchImage();
-      //conditionally render button logic
     }
   }, [canvasInfo, edit]);
 

@@ -13,17 +13,16 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route path="/canvas">
+          <Route exact path="/canvas">
             <Canvas />
           </Route>
-          <Route path="/canvas/edit/:id">
-            //Continue as guest
-            <Canvas />
+          <Route exact path="/canvas/edit/:id">
+            <Canvas edit />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <AboutUs />
           </Route>
         </Switch>
