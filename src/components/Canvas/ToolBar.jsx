@@ -1,3 +1,10 @@
+import styles from '../../views/Canvas/Canvas.css';
+import paletteImg from '../../assets/palette.png';
+import pencilImg from '../../assets/pencil.png';
+import eraserImg from '../../assets/eraser.png';
+import trashImg from '../../assets/trash.png';
+import rainbowImg from '../../assets/rainbowheart.png';
+
 export default function Toolbar({
   eraser,
   image,
@@ -25,13 +32,40 @@ export default function Toolbar({
   };
 
   return (
-    <div className="Toolbar">
-      <button onClick={() => handleClick('pencil')}>Pencil</button>
-      <input type="color" value={color} onChange={(e) => handleColor(e)} />
-      <button onClick={() => handleClick('eraser')}>Eraser</button>
-      <button onClick={() => handleClear()}>Clear All</button>
-      <button onClick={() => handleClick('rainbow')}>Rainbow</button>
+    <div className={styles.ToolBar}>
+      <label>
+        <img
+          className={styles.toolBarInput}
+          src={paletteImg}
+          alt="palette tool"
+        />
+        <input type="color" value={color} onChange={(e) => handleColor(e)} />
+      </label>
+      <button
+        className={styles.toolBarButton}
+        onClick={() => handleClick('pencil')}
+      >
+        <img className={styles.toolBarImg} src={pencilImg} alt="pencil-tool" />
+      </button>
+      <button
+        className={styles.toolBarButton}
+        onClick={() => handleClick('eraser')}
+      >
+        <img className={styles.toolBarImg} src={eraserImg} alt="eraser-tool" />
+      </button>
+      <button className={styles.toolBarButton} onClick={() => handleClear()}>
+        <img className={styles.toolBarImg} src={trashImg} alt="trash-tool" />
+      </button>
+      <button
+        className={styles.toolBarButton}
+        onClick={() => handleClick('rainbow')}
+      >
+        <img
+          className={styles.toolBarImg}
+          src={rainbowImg}
+          alt="rainbow-tool"
+        />
+      </button>
     </div>
   );
 }
-//color palette

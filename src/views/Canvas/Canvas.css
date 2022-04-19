@@ -14,7 +14,7 @@
   width: 20vw;
 }
 
-.CanvasFormInputs {
+.canvasFormInputs {
   margin-top: 20vh;
   display: flex;
   flex-direction: column;
@@ -22,18 +22,76 @@
   font-size: 1.5vw;
 }
 
-.CanvasFormInputs p {
+.canvasFormInputs p {
   text-align: center;
   margin-bottom: 2vh;
 }
 
-.CanvasFormInputs button {
+.canvasButton {
   margin-top: 1vh;
   background-color: white;
   border: black 0.3vw solid;
-  padding: 1vw;
+  padding: 0.5vw;
   font-family: monospace;
   font-size: 1vw;
-  width: 8vw;
+  width: auto;
   align-self: center;
+}
+
+.CanvasControls {
+  display: flex;
+  gap: 2vh;
+  margin-bottom: 10vh;
+}
+
+.canvasSelect {
+  margin-top: 1vh;
+  background-color: white;
+  border: black 0.3vw solid;
+  padding: 0.42vw;
+  font-family: monospace;
+  font-size: 1vw;
+  width: auto;
+  align-self: center;
+}
+
+.Prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2.5vh;
+}
+
+.ToolBar {
+  margin: 2.5vh;
+}
+
+.toolBarButton {
+  background-color: transparent;
+  border: none;
+}
+
+.toolBarButton:hover {
+  transform: scale(1.1);
+}
+
+.toolBarButton:focus {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.toolBarImg {
+  height: 6vh;
+}
+
+.toolBarInput {
+  height: 6vh;
+}
+
+.toolBarInput:hover {
+  transform: scale(1.2);
+}
+
+input[type='color'] {
+  display: none;
 }
