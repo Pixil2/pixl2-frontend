@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { saveImage, updateImage } from '../../services/images';
-import { getAllTags } from '../../services/tags';
+import { getAllTags, saveTag } from '../../services/tags';
 import { getCurrentUser } from '../../services/users';
 
 export default function CanvasControls({ image, edit }) {
@@ -11,7 +11,7 @@ export default function CanvasControls({ image, edit }) {
     const fetchTags = async () => {
       const res = await getAllTags();
       console.log('res', res);
-      setTagList([{ id: 'unselected', name: 'Unselected' }, ...res]);
+      setTagList([{ id: 15, name: 'Unselected' }, ...res]);
     };
     fetchTags();
   }, []);
@@ -25,7 +25,12 @@ export default function CanvasControls({ image, edit }) {
         selectedTag = item;
       }
     });
-    await saveImage(image, selectedTag.id);
+
+    const res = await saveImage(image);
+    console.log(selectedTag);
+    if (selectedTag.name != 'Unselected') {
+      await saveTag(res.id, selectedTag.id);
+    }
     // if (!tag) window.location.href = './profile';
   };
 
