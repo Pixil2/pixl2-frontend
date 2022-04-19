@@ -11,7 +11,7 @@ export default function CanvasControls({ image, edit }) {
     const fetchTags = async () => {
       const res = await getAllTags();
       console.log('res', res);
-      setTagList([{ id: 15, name: 'Unselected' }, ...res]);
+      setTagList(res);
     };
     fetchTags();
   }, []);
@@ -28,9 +28,9 @@ export default function CanvasControls({ image, edit }) {
 
     const res = await saveImage(image);
     console.log(selectedTag);
-    if (selectedTag.name != 'Unselected') {
-      await saveTag(res.id, selectedTag.id);
-    }
+    // if (selectedTag.id != 1) {
+    //   await saveTag(res.id, selectedTag.id);
+    // }
     // if (!tag) window.location.href = './profile';
   };
 
