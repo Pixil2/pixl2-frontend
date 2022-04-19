@@ -1,22 +1,54 @@
 .Home {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.homeContainer {
+  display: flex;
   flex-direction: row;
+  width: 80vw;
+  justify-content: space-between;
+  margin: 0 10vh 10vh 10vh;
 }
 
 .leftSide {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  justify-content: space-between;
+}
+
+.leftSideCaption {
+  width: 75%;
+  font-size: 35px;
+  margin-top: 125px;
+}
+
+.pixelImg {
+  height: 500px;
+  border: 6px solid black;
 }
 
 .signIn {
   display: flex;
   flex-direction: row;
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 100px;
+  gap: 20px;
 }
 
-.link {
-  margin-right: 20px;
+.button {
+  background-color: white;
+  border: black 3px solid;
+  padding: 8px;
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+.button:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
 }

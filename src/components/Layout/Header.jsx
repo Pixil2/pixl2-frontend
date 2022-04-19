@@ -9,10 +9,15 @@ export default function Header() {
   };
   return (
     <header className={styles.Header}>
-      <h1 className={styles.logo}>PIXL</h1>
-      <Link to="/profile" onClick={onClick}>
-        <p className={styles.gallery}>Gallery</p>
-      </Link>
+      <h1 className={styles.headerLogo}>PIXL 2</h1>
+      <div className={styles.headerLinkContainer}>
+        <Link className={styles.headerLink} onClick={onClick}>
+          Profile
+        </Link>
+        <Link className={styles.headerLink} to="/about">
+          About
+        </Link>
+      </div>
     </header>
   );
 }
