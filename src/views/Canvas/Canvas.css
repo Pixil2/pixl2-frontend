@@ -44,3 +44,37 @@
   justify-content: center;
   margin: 2.5vh;
 }
+
+.ToolBar {
+  margin: 2.5vh;
+}
+
+.toolBarButton {
+  background-color: transparent;
+  border: none;
+}
+
+.toolBarButton:hover {
+  transform: scale(1.1);
+}
+
+.toolBarButton:focus {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px black);
+}
+
+.toolBarImg {
+  height: 6vh;
+}
+
+.toolBarInput {
+  height: 6vh;
+}
+
+.toolBarInput:hover {
+  transform: scale(1.2);
+}
+
+input[type='color'] {
+  display: none;
+}
