@@ -9,6 +9,7 @@ export default function Home() {
   const onClick = () => {
     window.location.href = './canvas';
   };
+
   return (
     <div className={styles.Home}>
       <Header />
@@ -23,8 +24,9 @@ export default function Home() {
               <button className={styles.button}>Sign-in with Github</button>
             </a>
             <Link to="/canvas">
-              <button className={styles.button}>Continue as Guest</button>
-              <button onClick={onClick}>Continue as Guest</button>
+              <button onClick={onClick} className={styles.button}>
+                Continue as Guest
+              </button>
             </Link>
           </div>
         </div>
