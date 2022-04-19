@@ -1,13 +1,37 @@
-import React from 'react';
-import { getImageById, saveImage, updateImage } from '../../services/images';
+import React, { useState, useEffect } from 'react';
+import { saveImage, updateImage } from '../../services/images';
+import { getAllTags, saveTag } from '../../services/tags';
 import { getCurrentUser } from '../../services/users';
 
 export default function CanvasControls({ image, edit }) {
+  const [tagList, setTagList] = useState([]);
+  const [tag, setTag] = useState('unselected');
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      const res = await getAllTags();
+      console.log('res', res);
+      setTagList([{ id: 15, name: 'Unselected' }, ...res]);
+    };
+    fetchTags();
+  }, []);
+
   const handleSave = async (image) => {
     const user = await getCurrentUser();
     image = { ...image, userId: user.id };
-    await saveImage(image);
-    window.location.href = './profile';
+    let selectedTag = {};
+    tagList.map((item) => {
+      if (item.name === tag) {
+        selectedTag = item;
+      }
+    });
+
+    const res = await saveImage(image);
+    console.log(selectedTag);
+    if (selectedTag.name != 'Unselected') {
+      await saveTag(res.id, selectedTag.id);
+    }
+    // if (!tag) window.location.href = './profile';
   };
 
   const handleUpdate = async (image) => {
@@ -17,6 +41,12 @@ export default function CanvasControls({ image, edit }) {
 
   return (
     <div>
+      <select value={tag} onChange={(e) => setTag(e.target.value)}>
+        {tagList.map((item) => {
+          return <option key={item.id}>{item.name}</option>;
+        })}
+      </select>
+      {tag}
       {!edit && <button onClick={() => handleSave(image)}>Save</button>}
       {edit && <button onClick={() => handleUpdate(image)}>Update</button>}
     </div>
