@@ -26,7 +26,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
   return (
     <div className={styles.CanvasForm}>
       <Header />
-      <form className={styles.CanvasFormInputs} onSubmit={handleSubmit}>
+      <form className={styles.canvasFormInputs} onSubmit={handleSubmit}>
         <p>
           Let's get started! Please give your artwork a title and a size (1 -
           50).
@@ -48,7 +48,9 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           onChange={handleFormChange}
         />
 
-        <button type="submit">Submit</button>
+        <button className={styles.canvasButton} type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
