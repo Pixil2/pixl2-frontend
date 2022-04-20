@@ -7,20 +7,32 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from '../../context/UserContext';
 import Community from './Community';
 
+const image = {
+  id: expect.any(String),
+  title: 'A title',
+  height: 10,
+  width: 10,
+  colorArray: ['rgb(0, 0, 0)'],
+  userId: '1',
+  isPublic: false,
+  isApproved: null,
+};
+
 it('Tests functionality of profile view', async () => {
   const container = render(
     <UserProvider>
-      <MemoryRouter initialEntries={['/profile']}>
+      <MemoryRouter initialEntries={['/community']}>
         <Routes>
           <Route
             exact
-            path="/profile"
+            path="/community"
             element={
               <Community
                 user={{
                   id: 1,
                   username: 'whatever',
                 }}
+                image={{ image }}
               />
             }
           />

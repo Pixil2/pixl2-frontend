@@ -21,9 +21,9 @@ Object {
           >
             <a
               class="headerLink"
-              href="/community"
+              href="/profile"
             >
-              Community Gallery
+              Profile
             </a>
             <a
               class="headerLink"
@@ -63,9 +63,9 @@ Object {
         >
           <a
             class="headerLink"
-            href="/community"
+            href="/profile"
           >
-            Community Gallery
+            Profile
           </a>
           <a
             class="headerLink"
