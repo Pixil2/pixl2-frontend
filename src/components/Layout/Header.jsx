@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Header.css';
 import { useCurrentUser } from '../../context/UserContext';
-import { signOut } from '../../services/users';
 
 export default function Header() {
   const { user, logout } = useCurrentUser();
@@ -15,11 +14,11 @@ export default function Header() {
   const toAbout = () => {
     window.location.href = './about';
   };
+
   const handleLogOut = async () => {
     await logout();
     navigate('/');
   };
-  console.log(user);
 
   return (
     <header className={styles.Header}>

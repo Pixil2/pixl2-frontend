@@ -2,8 +2,11 @@ import React from 'react';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
 import pixelImg from '../../assets/rainbowpattern.png';
+import { useCurrentUser } from '../../context/UserContext';
 
 export default function Home() {
+  const { user } = useCurrentUser();
+
   const handleContinue = () => {
     window.location.href = './canvas';
   };
@@ -11,6 +14,8 @@ export default function Home() {
   const handleSignIn = () => {
     window.location.href = 'http://localhost:7890/api/v1/users/login';
   };
+
+  console.log('user', user);
 
   return (
     <div className={styles.Home}>
