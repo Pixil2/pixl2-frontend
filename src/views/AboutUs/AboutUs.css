@@ -1,0 +1,19 @@
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutBioContainer {
+  display: flex;
+  align-items: center;
+}
+
+.aboutBio {
+  width: 20vw;
+}
+
+.aboutBio img {
+  width: 15vw;
+}
