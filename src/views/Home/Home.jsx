@@ -13,7 +13,7 @@ export default function Home() {
 
   //refactor to use API_URL
   const handleSignIn = () => {
-    window.location.href = 'http://localhost:7890/api/v1/users/login';
+    window.location.href = `${process.env.API_URL}/api/v1/users/login`;
   };
 
   return (
