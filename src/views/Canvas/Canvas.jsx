@@ -19,6 +19,7 @@ export default function Canvas({ edit = false }) {
   const [eraser, setEraser] = useState({});
   const [tool, setTool] = useState('pencil');
   const [color, setColor] = useState('#000000');
+  const [gridCapture, setGridCapture] = useState();
   const params = useParams();
 
   useEffect(() => {
@@ -39,6 +40,8 @@ export default function Canvas({ edit = false }) {
   if (!created && !edit)
     return <CanvasForm setCreated={setCreated} setCanvasInfo={setCanvasInfo} />;
 
+  console.log('gridCapture', gridCapture);
+
   return (
     <div className={styles.Canvas}>
       <Header />
@@ -57,9 +60,10 @@ export default function Canvas({ edit = false }) {
         setImage={setImage}
         eraser={eraser}
         color={color}
+        setGridCapture={setGridCapture}
       />
       <Prompt />
-      <CanvasControls image={image} edit={edit} />
+      <CanvasControls gridCapture={gridCapture} image={image} edit={edit} />
     </div>
   );
 }
