@@ -8,8 +8,6 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   const handleLogOut = async () => {
     await logout();
     navigate('/');
@@ -31,7 +29,7 @@ export default function Header() {
         <Link className={styles.headerLink} to="/about">
           About
         </Link>
-        {user.id && (
+        {user?.id && (
           <button className={styles.headerButton} onClick={handleLogOut}>
             Log Out
           </button>

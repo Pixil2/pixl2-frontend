@@ -26,7 +26,7 @@ export default function Profile() {
       setCurrentImages(tagArray);
     };
     fetch();
-  }, [user]);
+  }, []);
 
   const handleEdit = (id) => {
     navigate(`/canvas/edit/${id}`);
