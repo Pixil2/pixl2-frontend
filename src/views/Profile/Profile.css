@@ -16,10 +16,63 @@
   border: 5px solid black;
 }
 
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6vh 0 2vh 0;
+  gap: 2vh;
+}
+
 .image {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   height: 250px;
   width: 250px;
+}
+
+.imageHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.imageTitle {
+  text-transform: capitalize;
+  font-size: 2vw;
+}
+
+.imageTag {
+  text-transform: lowercase;
+  font-family: monospace;
+}
+
+.imageButtons {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 1vh;
+}
+
+.imageButton {
+  background-color: white;
+  border: black 0.3vw solid;
+  padding: 1vw;
+  font-family: monospace;
+  font-size: 0.9vw;
+}
+.imageButton:hover {
+  transform: scale(1.02);
+}
+
+.imageButton:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.createButton {
+  font-size: 2vw;
+  margin-top: 2vh;
 }

@@ -1,10 +1,10 @@
-.Profile {
+.Community {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.ProfileContainer {
+.imageContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
@@ -22,4 +22,50 @@
   grid-template-rows: repeat(10, 1fr);
   height: 250px;
   width: 250px;
+}
+
+.imageHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.imageTitle {
+  text-transform: capitalize;
+  font-size: 2vw;
+}
+
+.imageTag {
+  text-transform: lowercase;
+  font-family: monospace;
+}
+.communityHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6vh 0 2vh 0;
+  gap: 2vh;
+}
+
+.createButton {
+  background-color: white;
+  border: black 0.3vw solid;
+  padding: 1vw;
+  font-family: monospace;
+  font-size: 2vw;
+  margin-top: 2vh;
+}
+.createButton:hover {
+  transform: scale(1.02);
+}
+
+.createButton:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.createButton {
+  font-size: 2vw;
+  margin-top: 2vh;
 }
