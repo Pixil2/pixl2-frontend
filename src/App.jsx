@@ -17,9 +17,9 @@ export default function App() {
             exact
             path="/profile"
             element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
+              //   <ProtectedRoute>
+              <Profile />
+              //   </ProtectedRoute>
             }
           />
           <Route exact path="/canvas" element={<Canvas />} />
@@ -27,9 +27,9 @@ export default function App() {
             exact
             path="/canvas/edit/:id"
             element={
-              <ProtectedRoute>
-                <Canvas edit />
-              </ProtectedRoute>
+              //   <ProtectedRoute>
+              <Canvas edit />
+              //   </ProtectedRoute>
             }
           />
           <Route exact path="/about" element={<AboutUs />} />
