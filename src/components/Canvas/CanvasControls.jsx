@@ -4,7 +4,7 @@ import { getAllTags, saveTag } from '../../services/tags';
 import { getCurrentUser } from '../../services/users';
 import styles from '../../views/Canvas/Canvas.css';
 
-export default function CanvasControls({ image, edit }) {
+export default function CanvasControls({ image, edit = false }) {
   const [tagList, setTagList] = useState([]);
   const [tag, setTag] = useState('unselected');
 
@@ -43,23 +43,25 @@ export default function CanvasControls({ image, edit }) {
 
   return (
     <div className={styles.CanvasControls}>
-      <select
-        className={styles.canvasSelect}
-        value={tag}
-        onChange={(e) => setTag(e.target.value)}
-      >
-        <option defaultValue>Please add a tag</option>
-        {tagList.map((item) => {
-          return <option key={item.id}>{item.name}</option>;
-        })}
-      </select>
       {!edit && (
-        <button
-          className={styles.canvasButton}
-          onClick={() => handleSave(image)}
-        >
-          Save
-        </button>
+        <>
+          <select
+            className={styles.canvasSelect}
+            value={tag}
+            onChange={(e) => setTag(e.target.value)}
+          >
+            <option defaultValue>Please add a tag</option>
+            {tagList.map((item) => {
+              return <option key={item.id}>{item.name}</option>;
+            })}
+          </select>
+          <button
+            className={styles.canvasButton}
+            onClick={() => handleSave(image)}
+          >
+            Save
+          </button>
+        </>
       )}
       {edit && (
         <button
