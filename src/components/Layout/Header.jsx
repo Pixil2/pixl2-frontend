@@ -8,8 +8,6 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   const handleLogOut = async () => {
     await logout();
     navigate('/');
