@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { getCurrentUser } from '../../services/users';
+import { useCurrentUser } from '../../context/UserContext';
 import { saveImage, updateImage } from '../../services/images';
 import { getAllTags, saveTag } from '../../services/tags';
-import { getCurrentUser } from '../../services/users';
 import styles from '../../views/Canvas/Canvas.css';
 
 export default function CanvasControls({ image, edit = false }) {
   const [tagList, setTagList] = useState([]);
   const [tag, setTag] = useState('unselected');
+  const { user } = useCurrentUser();
 
   useEffect(() => {
     const fetchTags = async () => {
       const res = await getAllTags();
-      console.log('res', res);
       setTagList(res);
     };
     fetchTags();
@@ -41,9 +42,11 @@ export default function CanvasControls({ image, edit = false }) {
     window.location.href = '../../profile';
   };
 
+  console.log('user', user);
+
   return (
     <div className={styles.CanvasControls}>
-      {!edit && (
+      {!edit && user.id && (
         <>
           <select
             className={styles.canvasSelect}
@@ -63,13 +66,21 @@ export default function CanvasControls({ image, edit = false }) {
           </button>
         </>
       )}
+      {!user.id && (
+        <>
+          <p>To create a profile and save your image, please sign in!</p>{' '}
+          <button className={styles.canvasButton}>Download</button>
+        </>
+      )}
       {edit && (
-        <button
-          className={styles.canvasButton}
-          onClick={() => handleUpdate(image)}
-        >
-          Update
-        </button>
+        <>
+          <button
+            className={styles.canvasButton}
+            onClick={() => handleUpdate(image)}
+          >
+            Update
+          </button>
+        </>
       )}
     </div>
   );
