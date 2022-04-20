@@ -18,21 +18,22 @@ export default function CanvasControls({ image, edit }) {
   }, []);
 
   const handleSave = async (image) => {
+    let selectedTag;
     const user = await getCurrentUser();
     image = { ...image, userId: user.id };
-    let selectedTag = {};
     tagList.map((item) => {
       if (item.name === tag) {
         selectedTag = item;
       }
     });
-
-    const res = await saveImage(image);
-    console.log(selectedTag);
-    await saveTag(res.id, selectedTag.id);
-    // if (selectedTag.id != 1) {
-    // }
-    if (!tag) window.location.href = './profile';
+    console.log('selectedTag', selectedTag);
+    if (!selectedTag) {
+      alert('Please select a tag.');
+    } else {
+      const res = await saveImage(image);
+      saveTag(res.id, selectedTag.id);
+      window.location.href = './profile';
+    }
   };
 
   const handleUpdate = async (image) => {

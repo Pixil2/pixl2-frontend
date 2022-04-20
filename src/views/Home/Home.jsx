@@ -2,12 +2,16 @@ import React from 'react';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
 import pixelImg from '../../assets/rainbowpattern.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+
   const handleContinue = () => {
-    window.location.href = './canvas';
+    navigate('/canvas');
   };
 
+  //refactor to use API_URL
   const handleSignIn = () => {
     window.location.href = 'http://localhost:7890/api/v1/users/login';
   };
