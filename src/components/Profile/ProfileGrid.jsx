@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Grid.css';
-import Pixl from './Pixl';
+import styles from './ProfileGrid.css';
+import Pixl from '../Canvas/Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid({ image, setImage, tool, eraser, color }) {
+export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
   const [pixelArray, setPixelArray] = useState([]);
   const [rainbowIndex, setRainbowIndex] = useState(0);
   const rainbowArray = [
@@ -28,8 +28,8 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
             pixelIndex={i}
             key={uuid()}
             background={colorArray[i]}
-            width={`${Math.round(500 / imageObject.height)}px`}
-            height={`${Math.round(500 / imageObject.height)}px`}
+            width={`${Math.round(250 / imageObject.height)}px`}
+            height={`${Math.round(250 / imageObject.height)}px`}
             handleClick={handleClick}
             index={i}
           />
@@ -40,8 +40,8 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
             pixelIndex={i}
             key={uuid()}
             background={colorArray[i]}
-            width={`${Math.round(500 / imageObject.width)}px`}
-            height={`${Math.round(500 / imageObject.width)}px`}
+            width={`${Math.round(200 / imageObject.width)}px`}
+            height={`${Math.round(200 / imageObject.width)}px`}
             handleClick={handleClick}
             index={i}
           />
@@ -81,7 +81,7 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
 
   return (
     <div
-      className={styles.Grid}
+      className={styles.ProfileGrid}
       style={{
         gridTemplateColumns: `repeat(${image.width}, 1fr)`,
         gridTemplateRows: `repeat(${image.height}, 1fr)`,

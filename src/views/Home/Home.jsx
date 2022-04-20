@@ -1,27 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Footer from '../../components/Layout/Footer';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
+import pixelImg from '../../assets/rainbowpattern.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate('/canvas');
+  };
+
+  //refactor to use API_URL
+  const handleSignIn = () => {
+    window.location.href = 'http://localhost:7890/api/v1/users/login';
+  };
+
   return (
-    <div>
+    <div className={styles.Home}>
       <Header />
-      <main className={styles.Home}>
+      <main className={styles.homeContainer}>
         <div className={styles.leftSide}>
-          <h4>Pixl description</h4>
+          <h4 className={styles.leftSideCaption}>
+            An interactive tool that brings creativity to life one pixel at a
+            time.
+          </h4>
           <div className={styles.signIn}>
-            <a href="http://localhost:7890/api/v1/users/login">
-              <button className={styles.link}>Sign In with Github</button>
-            </a>
-            <Link to="/canvas">
-              <button>Continue as Guest</button>
-            </Link>
+            <button className={styles.button} onClick={handleSignIn}>
+              Sign-in with Github
+            </button>
+            <button onClick={handleContinue} className={styles.button}>
+              Continue as Guest
+            </button>
           </div>
         </div>
+        <div className={styles.rightSide}>
+          <img src={pixelImg} alt="pixel image" className={styles.pixelImg} />
+        </div>
       </main>
-      <Footer />
     </div>
   );
 }

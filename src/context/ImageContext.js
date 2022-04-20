@@ -11,7 +11,7 @@ export function ProvideImage({ children }) {
   const [pixelArray, setPixelArray] = useState([]);
 
   useEffect(() => {
-    setImage(createImage('title', 17, 17));
+    setImage(createImage('title', 10, 10));
     setEraser(createImage('eraser', 10, 10));
     setLoading(false);
   }, [loading]);

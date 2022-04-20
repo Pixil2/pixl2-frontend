@@ -13,7 +13,8 @@ export const signIn = async ({ username }) => {
 };
 
 export const signOut = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/users`, {
+  console.log('in signout func');
+  const res = await fetch(`${process.env.API_URL}/api/v1/users/sessions`, {
     method: 'DELETE',
     credentials: 'include',
     mode: 'cors',

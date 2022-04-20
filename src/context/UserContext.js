@@ -26,7 +26,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const logout = useCallback(() => {
-    signOut().then(() => setUser(null));
+    signOut().then(() => setUser({}));
   }, []);
 
   useEffect(() => {
@@ -53,5 +53,5 @@ export const useCurrentUser = () => {
   if (context === undefined)
     throw new Error('useAuth must be used within UserProvider');
 
-  return { logout: context.logout, login: context.login };
+  return context;
 };

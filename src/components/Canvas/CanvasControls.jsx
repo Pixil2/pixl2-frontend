@@ -1,18 +1,74 @@
-import React from 'react';
-import { saveImage } from '../../services/images';
+import React, { useState, useEffect } from 'react';
+import { saveImage, updateImage } from '../../services/images';
+import { getAllTags, saveTag } from '../../services/tags';
 import { getCurrentUser } from '../../services/users';
+import styles from '../../views/Canvas/Canvas.css';
 
-export default function CanvasControls({ image }) {
+export default function CanvasControls({ image, edit }) {
+  const [tagList, setTagList] = useState([]);
+  const [tag, setTag] = useState('unselected');
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      const res = await getAllTags();
+      console.log('res', res);
+      setTagList(res);
+    };
+    fetchTags();
+  }, []);
+
   const handleSave = async (image) => {
+    let selectedTag;
     const user = await getCurrentUser();
-    console.log(user);
     image = { ...image, userId: user.id };
-    await saveImage(image);
+    tagList.map((item) => {
+      if (item.name === tag) {
+        selectedTag = item;
+      }
+    });
+    console.log('selectedTag', selectedTag);
+    if (!selectedTag) {
+      alert('Please select a tag.');
+    } else {
+      const res = await saveImage(image);
+      saveTag(res.id, selectedTag.id);
+      window.location.href = './profile';
+    }
+  };
+
+  const handleUpdate = async (image) => {
+    await updateImage(image);
+    window.location.href = '../../profile';
   };
 
   return (
-    <div>
-      <button onClick={() => handleSave(image)}>Save</button>
+    <div className={styles.CanvasControls}>
+      <select
+        className={styles.canvasSelect}
+        value={tag}
+        onChange={(e) => setTag(e.target.value)}
+      >
+        <option selected>Please add a tag</option>
+        {tagList.map((item) => {
+          return <option key={item.id}>{item.name}</option>;
+        })}
+      </select>
+      {!edit && (
+        <button
+          className={styles.canvasButton}
+          onClick={() => handleSave(image)}
+        >
+          Save
+        </button>
+      )}
+      {edit && (
+        <button
+          className={styles.canvasButton}
+          onClick={() => handleUpdate(image)}
+        >
+          Update
+        </button>
+      )}
     </div>
   );
 }
