@@ -12,10 +12,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log('formState', formState);
     try {
-      const { title, size } = formState;
       setCanvasInfo(formState);
       setCreated(true);
     } catch (error) {
@@ -36,7 +33,6 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           id="title"
           type="text"
           name="title"
-          value={formState.title}
           onChange={handleFormChange}
           required
         />
@@ -45,7 +41,6 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           id="size"
           type="number"
           name="size"
-          value={formState.size}
           onChange={handleFormChange}
           max="30"
           required
