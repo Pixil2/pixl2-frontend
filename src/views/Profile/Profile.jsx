@@ -4,12 +4,13 @@ import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
 import { getTagByImageId } from '../../services/tags';
 
 export default function Profile() {
   const [currentImages, setCurrentImages] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetch = async () => {
@@ -27,12 +28,8 @@ export default function Profile() {
     fetch();
   }, [user]);
 
-  const handleClick = () => {
-    window.location.href = './canvas';
-  };
-
   const handleEdit = (id) => {
-    window.location.href = `./canvas/edit/${id}`;
+    navigate(`/canvas/edit/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -45,7 +42,7 @@ export default function Profile() {
     <div className={styles.Profile}>
       <Header />
       <Link to="/canvas">
-        <button onClick={handleClick}>Create Image</button>
+        <button>Create Image</button>
       </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
