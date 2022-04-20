@@ -5,6 +5,7 @@ import Home from './views/Home/Home';
 import Profile from './views/Profile/Profile';
 import styles from './App.css';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import Community from './views/Community/Community';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
             }
           />
           <Route exact path="/about" element={<AboutUs />} />
+          <Route exact path="/community" element={<Community />} />
         </Routes>
       </Router>
     </div>

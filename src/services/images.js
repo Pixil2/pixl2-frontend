@@ -1,3 +1,11 @@
+export const getAllImages = async () => {
+  const res = await fetch(`${process.env.API_URL}/api/v1/images`, {
+    credentials: 'include',
+  });
+
+  return res.json();
+};
+
 export const getImageById = async (id) => {
   const res = await fetch(`${process.env.API_URL}/api/v1/images/${id}`, {
     credentials: 'include',
@@ -42,6 +50,5 @@ export const deleteImageById = async (id) => {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     mode: 'cors',
-    // body: JSON.stringify(id),
   });
 };
