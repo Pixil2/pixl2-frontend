@@ -27,9 +27,7 @@ it('Render the Home/Landing Page', async () => {
   const signInBtn = screen.getByRole('button', {
     name: /sign\-in with github/i,
   });
-  const guestBtn = screen.getByRole('button', {
-    name: /sign\-in with github/i,
-  });
+  const guestBtn = screen.getByRole('button', { name: /continue as guest/i });
 
   expect(logo).toBeInTheDocument();
   expect(profileLink).toBeInTheDocument();
