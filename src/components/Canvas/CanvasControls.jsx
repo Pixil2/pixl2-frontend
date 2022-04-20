@@ -48,6 +48,7 @@ export default function CanvasControls({ image, edit }) {
         value={tag}
         onChange={(e) => setTag(e.target.value)}
       >
+        <option selected>Please add a tag</option>
         {tagList.map((item) => {
           return <option key={item.id}>{item.name}</option>;
         })}
