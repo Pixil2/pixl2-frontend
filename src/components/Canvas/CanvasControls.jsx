@@ -27,7 +27,6 @@ export default function CanvasControls({ image, edit = false }) {
         selectedTag = item;
       }
     });
-    console.log('selectedTag', selectedTag);
     if (!selectedTag) {
       alert('Please select a tag.');
     } else {
@@ -41,8 +40,6 @@ export default function CanvasControls({ image, edit = false }) {
     await updateImage(image);
     window.location.href = '../../profile';
   };
-
-  console.log('user', user);
 
   return (
     <div className={styles.CanvasControls}>
@@ -67,10 +64,10 @@ export default function CanvasControls({ image, edit = false }) {
         </>
       )}
       {!user.id && (
-        <>
-          <p>To create a profile and save your image, please sign in!</p>{' '}
+        <div className={styles.guestControls}>
           <button className={styles.canvasButton}>Download</button>
-        </>
+          <p>To create a profile and save your image, please sign in!</p>
+        </div>
       )}
       {edit && (
         <>
