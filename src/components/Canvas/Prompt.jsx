@@ -5,9 +5,6 @@ export default function Prompt() {
   const [noun, setNoun] = useState('');
   const [adjective, setAdjective] = useState('');
 
-  console.log('noun', noun);
-  console.log('adjective', adjective);
-
   const handleClick = () => {
     const fetchData = async () => {
       const adj = await fetch(

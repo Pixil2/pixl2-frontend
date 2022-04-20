@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
+import { getTagByImageId } from '../../services/tags';
 
 export default function Profile() {
   const [currentImages, setCurrentImages] = useState([]);
@@ -14,10 +15,17 @@ export default function Profile() {
     const fetch = async () => {
       const user = await getCurrentUser();
       const res = await getUserImages(user.id);
-      setCurrentImages(res);
+      const tagArray = [];
+      await Promise.all(
+        res.map(async (item) => {
+          const thing = await getTagByImageId(item.id);
+          tagArray.push({ ...thing });
+        })
+      );
+      setCurrentImages(tagArray);
     };
     fetch();
-  }, []);
+  }, [user]);
 
   const handleClick = () => {
     window.location.href = './canvas';
@@ -40,7 +48,9 @@ export default function Profile() {
         <button onClick={handleClick}>Create Image</button>
       </Link>
       <div className={styles.ProfileContainer}>
-        {currentImages.map((item) => {
+        {currentImages.map((item, index) => {
+          const tag = item.tags[0].name;
+          console.log(tag);
           return (
             <div key={uuid()}>
               <p>{item.title}</p>
@@ -57,6 +67,7 @@ export default function Profile() {
               >
                 delete
               </button>
+              {tag}
             </div>
           );
         })}
