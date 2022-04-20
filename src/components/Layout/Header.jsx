@@ -22,7 +22,11 @@ export default function Header() {
         <Link className={styles.headerLink} to="/about">
           About
         </Link>
-        {user.id && <button onClick={handleLogOut}>Log Out</button>}
+        {user.id && (
+          <button className={styles.headerButton} onClick={handleLogOut}>
+            Log Out
+          </button>
+        )}
       </div>
     </header>
   );
