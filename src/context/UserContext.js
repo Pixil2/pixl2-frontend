@@ -14,7 +14,7 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   const login = async (credentials) => {
     try {
