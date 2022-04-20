@@ -31,7 +31,7 @@ export default function Header() {
         <Link className={styles.headerLink} to="/about">
           About
         </Link>
-        {user.id && (
+        {user?.id && (
           <button className={styles.headerButton} onClick={handleLogOut}>
             Log Out
           </button>
