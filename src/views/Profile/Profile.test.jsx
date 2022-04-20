@@ -7,6 +7,17 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from '../../context/UserContext';
 import Profile from './Profile';
 
+const image = {
+  id: expect.any(String),
+  title: 'A title',
+  height: 10,
+  width: 10,
+  colorArray: ['rgb(0, 0, 0)'],
+  userId: '1',
+  isPublic: false,
+  isApproved: null,
+};
+
 it('Tests functionality of profile view', async () => {
   const container = render(
     <UserProvider>
@@ -21,6 +32,7 @@ it('Tests functionality of profile view', async () => {
                   id: 1,
                   username: 'whatever',
                 }}
+                image={{ image }}
               />
             }
           />
@@ -32,9 +44,11 @@ it('Tests functionality of profile view', async () => {
   expect(loading).toBeInTheDocument();
   await waitForElementToBeRemoved(() => screen.getByText(/loading/i));
 
+  screen.debug();
   const createButton = await screen.findByRole('button', {
     name: /create image/i,
   });
+
   expect(createButton).toBeInTheDocument();
   expect(container).toMatchSnapshot();
 });
