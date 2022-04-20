@@ -95,16 +95,3 @@
 input[type='color'] {
   display: none;
 }
-
-.guestControls {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2vh;
-}
-
-.guestControls p {
-  font-family: monospace;
-  font-size: 2vh;
-}

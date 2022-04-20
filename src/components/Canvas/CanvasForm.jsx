@@ -12,7 +12,10 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log('formState', formState);
     try {
+      const { title, size } = formState;
       setCanvasInfo(formState);
       setCreated(true);
     } catch (error) {
@@ -26,24 +29,23 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
       <form className={styles.canvasFormInputs} onSubmit={handleSubmit}>
         <p>
           Let's get started! Please give your artwork a title and a size (1 -
-          30).
+          50).
         </p>
         <label>Title: </label>
         <input
           id="title"
           type="text"
           name="title"
+          value={formState.title}
           onChange={handleFormChange}
-          required
         />
         <label>Size: </label>
         <input
           id="size"
           type="number"
           name="size"
+          value={formState.size}
           onChange={handleFormChange}
-          max="30"
-          required
         />
 
         <button className={styles.canvasButton} type="submit">

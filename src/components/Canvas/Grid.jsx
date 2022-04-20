@@ -3,14 +3,7 @@ import styles from './Grid.css';
 import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid({
-  image,
-  setImage,
-  tool,
-  eraser,
-  color,
-  setGridCapture,
-}) {
+export default function Grid({ image, setImage, tool, eraser, color }) {
   const [pixelArray, setPixelArray] = useState([]);
   const [rainbowIndex, setRainbowIndex] = useState(0);
   const rainbowArray = [
