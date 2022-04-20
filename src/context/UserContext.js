@@ -26,7 +26,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const logout = useCallback(() => {
-    signOut().then(() => setUser(null));
+    signOut().then(() => setUser({}));
   }, []);
 
   useEffect(() => {
