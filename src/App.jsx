@@ -17,9 +17,9 @@ export default function App() {
             exact
             path="/profile"
             element={
-              //   <ProtectedRoute>
-              <Profile />
-              //   </ProtectedRoute>
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
             }
           />
           <Route exact path="/canvas" element={<Canvas />} />
