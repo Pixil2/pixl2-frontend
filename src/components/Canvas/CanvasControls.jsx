@@ -4,6 +4,7 @@ import { useCurrentUser } from '../../context/UserContext';
 import { saveImage, updateImage } from '../../services/images';
 import { getAllTags, saveTag } from '../../services/tags';
 import styles from '../../views/Canvas/Canvas.css';
+import html2canvas from 'html2canvas';
 
 export default function CanvasControls({ image, edit = false }) {
   const [tagList, setTagList] = useState([]);
@@ -41,6 +42,11 @@ export default function CanvasControls({ image, edit = false }) {
     window.location.href = '../../profile';
   };
 
+  const handleCapture = async () => {
+    const capture = await html2canvas(image);
+    console.log(capture);
+  };
+
   return (
     <div className={styles.CanvasControls}>
       {!edit && user.id && (
@@ -60,6 +66,9 @@ export default function CanvasControls({ image, edit = false }) {
             onClick={() => handleSave(image)}
           >
             Save
+          </button>
+          <button className={styles.canvasButton} onClick={handleCapture}>
+            Download
           </button>
         </>
       )}
