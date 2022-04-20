@@ -13,10 +13,28 @@
 
 .headerLinkContainer {
   display: flex;
-  gap: 4vw;
+  align-items: center;
+  gap: 2vw;
 }
 
 .headerLink {
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   font-family: monospace;
+}
+
+.headerButton {
+  background-color: white;
+  border: black 0.3vw solid;
+  padding: 0.5vw;
+  font-family: monospace;
+  font-size: 1vw;
+}
+
+.headerButton:hover {
+  transform: scale(1.02);
+}
+
+.headerButton:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
 }
