@@ -3,6 +3,7 @@
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   background-color: pink;
+  border: 0.5vw solid black;
   height: 200px;
   width: 200px;
 }
