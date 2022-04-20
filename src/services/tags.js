@@ -13,3 +13,16 @@ export const saveTag = async (imageId, tagId) => {
     mode: 'cors',
   });
 };
+
+export const getTagByImageId = async (imageId) => {
+  const res = await fetch(
+    `${process.env.API_URL}/api/v1/images/${imageId}/tags`,
+    {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    }
+  );
+  return await res.json();
+};
