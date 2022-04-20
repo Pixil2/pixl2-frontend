@@ -29,7 +29,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
       <form className={styles.canvasFormInputs} onSubmit={handleSubmit}>
         <p>
           Let's get started! Please give your artwork a title and a size (1 -
-          50).
+          30).
         </p>
         <label>Title: </label>
         <input
@@ -38,6 +38,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           name="title"
           value={formState.title}
           onChange={handleFormChange}
+          required
         />
         <label>Size: </label>
         <input
@@ -46,6 +47,8 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           name="size"
           value={formState.size}
           onChange={handleFormChange}
+          max="30"
+          required
         />
 
         <button className={styles.canvasButton} type="submit">
