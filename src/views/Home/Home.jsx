@@ -18,8 +18,7 @@ export default function Home() {
       <main className={styles.homeContainer}>
         <div className={styles.leftSide}>
           <h4 className={styles.leftSideCaption}>
-            An interactive tool that brings creativity to life one pixel at a
-            time.
+            Bringing your creativity to life one pixel at a time.
           </h4>
           <div className={styles.signIn}>
             <button className={styles.button} onClick={handleSignIn}>
