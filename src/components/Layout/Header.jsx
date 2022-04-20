@@ -19,7 +19,7 @@ export default function Header() {
       <div className={styles.headerLinkContainer}>
         {location.pathname === '/profile' ? (
           <Link className={styles.headerLink} to="/community">
-            Community Gallery
+            Community
           </Link>
         ) : (
           <Link className={styles.headerLink} to="/profile">

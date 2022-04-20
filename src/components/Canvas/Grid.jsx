@@ -68,12 +68,14 @@ export default function Grid({
     } else if (tool === 'eraser') {
       newImage.colorArray[index] = eraser.colorArray[index];
     } else if (tool === 'rainbow') {
-      if (rainbowIndex === 7) {
+      if (rainbowIndex === 6) {
         i = 0;
+        console.log(i);
         newImage.colorArray[index] = rainbowArray[rainbowIndex];
         setRainbowIndex(i);
         i++;
       } else {
+        console.log(i);
         newImage.colorArray[index] = rainbowArray[rainbowIndex];
         i++;
         setRainbowIndex(i);
