@@ -5,13 +5,13 @@ import { UserProvider } from './context/UserContext';
 
 it('Renders PIXL2', async () => {
   render(
-    <MemoryRouter>
-      <UserProvider>
+    <UserProvider>
+      <MemoryRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
         </Routes>
-      </UserProvider>
-    </MemoryRouter>
+      </MemoryRouter>
+    </UserProvider>
   );
   const loading = screen.getByText(/loading/i);
   expect(loading).toBeInTheDocument();
