@@ -18,7 +18,6 @@ export default function Toolbar({
   };
 
   const handleColor = (e) => {
-    console.log('e', e.target.value);
     setColor(e.target.value);
     setTool('pencil');
   };
