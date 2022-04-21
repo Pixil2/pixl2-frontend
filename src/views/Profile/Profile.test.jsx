@@ -50,13 +50,13 @@ afterAll(() => {
 
 it('Tests functionality of profile view', async () => {
   const container = render(
-    <UserProvider>
-      <MemoryRouter initialEntries={['/profile']}>
+    <MemoryRouter initialEntries={['/profile']}>
+      <UserProvider>
         <Routes>
           <Route exact path="/profile" element={<Profile />} />
         </Routes>
-      </MemoryRouter>
-    </UserProvider>
+      </UserProvider>
+    </MemoryRouter>
   );
   const loading = screen.getByText(/loading/i);
   expect(loading).toBeInTheDocument();
