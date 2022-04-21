@@ -43,11 +43,8 @@
 .headerButton {
   background-color: black;
   color: white;
-  /* border: black 0.3vw solid; */
   border: none;
   padding: 1em 1.5em;
-  font-family: var(--font-primary);
-
   text-transform: uppercase;
   font-family: var(--font-primary);
   font-size: var(--font-size-nav);

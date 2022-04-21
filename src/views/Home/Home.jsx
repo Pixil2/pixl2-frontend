@@ -30,7 +30,10 @@ export default function Home() {
             <button className={styles.button} onClick={handleSignIn}>
               SIGN-IN WITH GITHUB
             </button>
-            <button onClick={handleContinue} className={styles.button}>
+            <button
+              onClick={handleContinue}
+              className={`${styles.button} ${styles.continue}`}
+            >
               CONTINUE AS GUEST
             </button>
           </div>
