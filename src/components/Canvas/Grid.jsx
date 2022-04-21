@@ -54,9 +54,6 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
   }
 
   const handleClick = (index) => {
-    // DRAG FEATURE: uncomment line below
-    // if (!isClicked) return;
-
     const newImage = { ...image };
     let i = rainbowIndex;
 
@@ -86,15 +83,6 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
   return (
     <div
       className={styles.Grid}
-      // DRAG FEATURE: uncomment line below
-      //   onMouseDown={() => {
-      //     setIsClicked(true);
-      //     console.log('clicked', isClicked);
-      //   }}
-      //   onMouseUp={() => {
-      //     setIsClicked(false);
-      //     console.log('clicked', isClicked);
-      //   }}
       style={{
         gridTemplateColumns: `repeat(${image.width}, 1fr)`,
         gridTemplateRows: `repeat(${image.height}, 1fr)`,
