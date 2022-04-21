@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/Layout/Header';
 import styles from './AboutUs.css';
-import rainbowpattern from '../../assets/rainbowpattern.png';
 import andrew from '../../assets/andrew.jpeg';
 import james from '../../assets/james.png';
 import phoenix from '../../assets/phoenix.png';
