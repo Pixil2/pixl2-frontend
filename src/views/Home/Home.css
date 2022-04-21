@@ -52,7 +52,7 @@
   font-family: var(--font-primary);
   font-size: var(--font-size-nav);
   line-height: 1;
-  width: 25vw;
+  width: clamp(200px, 20vw, 400px);
 }
 
 .continue {
