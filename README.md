@@ -40,7 +40,7 @@ Our core project planning was done on Miro board and you can view our planning:
 <a href="https://miro.com/app/board/uXjVO9xfIEM=/?share_link_id=822400900447"> Miro Board </a>
 
 The initial Wireframe created by the team set the foundations for the App.
-![PIXL2](/assets/wireframe.png)
+![PIXL2](./src/assets/wireframe.png)
 
 #### Original Project
 
