@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests functionality of profile view 1`] = `
+exports[`Tests functionality of Community view 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

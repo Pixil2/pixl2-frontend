@@ -5,7 +5,12 @@ import { UserProvider } from '../../context/UserContext';
 
 it('Render the Home/Landing Page', async () => {
   render(
-    <UserProvider>
+    <UserProvider
+      user={{
+        id: 1,
+        username: 'whatever',
+      }}
+    >
       <MemoryRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />

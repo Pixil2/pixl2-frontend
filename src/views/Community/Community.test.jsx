@@ -18,7 +18,7 @@ const image = {
   isApproved: null,
 };
 
-it('Tests functionality of profile view', async () => {
+it('Tests functionality of Community view', async () => {
   const container = render(
     <UserProvider>
       <MemoryRouter initialEntries={['/community']}>
