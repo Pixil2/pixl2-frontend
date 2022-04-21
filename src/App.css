@@ -8,8 +8,6 @@
   box-sizing: border-box;
   margin: 0;
   font-family: var(--font-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .App {

@@ -4,11 +4,10 @@ import Header from '../Layout/Header';
 import styles from '../../views/Canvas/Canvas.css';
 
 export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
-  const { formState, formError, setFormState, handleFormChange, setFormError } =
-    useForm({
-      title: image?.title,
-      size: image?.size,
-    });
+  const { formState, handleFormChange, setFormError } = useForm({
+    title: image?.title,
+    size: image?.size,
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();

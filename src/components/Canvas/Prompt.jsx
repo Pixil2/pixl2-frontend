@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../../views/Canvas/Canvas.css';
 
 export default function Prompt() {
