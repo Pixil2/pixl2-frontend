@@ -3,14 +3,14 @@ import { getUserImages, deleteImageById } from '../../services/images';
 import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { v4 as uuid } from 'uuid';
 import styles from './Profile.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
 import { getTagByImageId } from '../../services/tags';
 import { useCurrentUser } from '../../context/UserContext';
 
 export default function Profile() {
   const [currentImages, setCurrentImages] = useState([]);
-  const { user } = useCurrentUser();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetch = async () => {
@@ -26,14 +26,10 @@ export default function Profile() {
       setCurrentImages(tagArray);
     };
     fetch();
-  }, [user]);
-
-  const handleClick = () => {
-    window.location.href = './canvas';
-  };
+  }, []);
 
   const handleEdit = (id) => {
-    window.location.href = `./canvas/edit/${id}`;
+    navigate(`/canvas/edit/${id}`);
   };
 
   const handleDelete = async (id) => {
@@ -47,8 +43,17 @@ export default function Profile() {
   return (
     <div className={styles.Profile}>
       <Header />
+      <div className={styles.profileHeader}>
+        <h1 className={styles.profileTitle}>User Gallery</h1>
+        <p className={styles.profileCaption}>
+          hey nice work! checkout all of your awesome artwork below or create a
+          new image!
+        </p>
+      </div>
       <Link to="/canvas">
-        <button onClick={handleClick}>Create Image</button>
+        <button className={`${styles.createButton} ${styles.imageButton}`}>
+          Create Image
+        </button>
       </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
@@ -56,21 +61,27 @@ export default function Profile() {
           //   console.log(tag);
           return (
             <div key={uuid()}>
-              <p>{item.title}</p>
+              <div className={styles.imageHeader}>
+                <h1 className={styles.imageTitle}>{item.title}</h1>
+                <p className={styles.imageTag}>{tag}</p>
+              </div>
               <ProfileGrid image={item} />
-              <button
-                value={item.id}
-                onClick={(e) => handleEdit(e.target.value)}
-              >
-                edit
-              </button>
-              <button
-                value={item.id}
-                onClick={(e) => handleDelete(e.target.value)}
-              >
-                delete
-              </button>
-              {/* {tag} */}
+              <div className={styles.imageButtons}>
+                <button
+                  className={styles.imageButton}
+                  value={item.id}
+                  onClick={(e) => handleEdit(e.target.value)}
+                >
+                  edit
+                </button>
+                <button
+                  className={styles.imageButton}
+                  value={item.id}
+                  onClick={(e) => handleDelete(e.target.value)}
+                >
+                  delete
+                </button>
+              </div>
             </div>
           );
         })}

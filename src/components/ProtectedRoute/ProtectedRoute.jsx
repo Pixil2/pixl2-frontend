@@ -4,10 +4,10 @@ import { useCurrentUser } from '../../context/UserContext';
 
 export default function ProtectedRoute({ children }) {
   const { user } = useCurrentUser();
-  if (user.status === 401) {
+  if (user?.status === 401) {
     return <Navigate to="/" replace />;
   }
-  if (user.id) {
+  if (user?.id) {
     return children;
   }
 }
