@@ -28,7 +28,7 @@ export default function Prompt() {
           You could draw a(n) {adjective} {noun}!
         </span>
       )}
-      <button className={styles.canvasButton} onClick={handleClick}>
+      <button className={styles.promptButton} onClick={handleClick}>
         Generate a prompt!
       </button>
     </div>

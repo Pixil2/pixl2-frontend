@@ -45,15 +45,18 @@ export default function Canvas({ edit = false }) {
   return (
     <div className={styles.Canvas}>
       <Header />
-      <Toolbar
-        tool={tool}
-        setTool={setTool}
-        eraser={eraser}
-        image={image}
-        setImage={setImage}
-        color={color}
-        setColor={setColor}
-      />
+      <div className={styles.canvasTools}>
+        <Toolbar
+          tool={tool}
+          setTool={setTool}
+          eraser={eraser}
+          image={image}
+          setImage={setImage}
+          color={color}
+          setColor={setColor}
+        />
+        <Prompt />
+      </div>
       <Grid
         tool={tool}
         image={image}
@@ -62,7 +65,6 @@ export default function Canvas({ edit = false }) {
         color={color}
         setGridCapture={setGridCapture}
       />
-      <Prompt />
       <CanvasControls gridCapture={gridCapture} image={image} edit={edit} />
     </div>
   );

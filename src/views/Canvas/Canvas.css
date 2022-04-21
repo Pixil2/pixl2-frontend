@@ -57,11 +57,38 @@
   align-self: center;
 }
 
+.canvasTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .Prompt {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2.5vh;
+  margin-top: 1vh;
+}
+
+.promptButton {
+  border: 0.3vw solid black;
+  background-color: white;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1vw;
+  padding: 0.5vw 1.5vw;
+  margin-top: 1vh;
+  width: 15vw;
+  align-self: center;
+}
+
+.promptButton:hover {
+  transform: scale(1.1);
+}
+
+.promptButton:active {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .ToolBar {
