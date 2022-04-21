@@ -41,14 +41,6 @@ export default function Community() {
     fetch();
   }, []);
 
-  //   const getTaggedImages = async (id) => {
-  //     const taggedImages = await getImageByTagId(id);
-  //     console.log('taggedImages', taggedImages);
-  //     return taggedImages;
-  //   };
-
-  //   console.log('animal', animal);
-
   return (
     <div className={styles.communityContainer}>
       <Header />
