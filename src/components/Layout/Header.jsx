@@ -13,9 +13,15 @@ export default function Header() {
     navigate('/');
   };
 
+  const handleClick = () => {
+    navigate('/');
+  };
+
   return (
     <header className={styles.Header}>
-      <h1 className={styles.headerLogo}>PIXL 2</h1>
+      <h1 onClick={handleClick} className={styles.headerLogo}>
+        PIXL 2
+      </h1>
       <div className={styles.headerLinkContainer}>
         {location.pathname === '/profile' ? (
           <Link className={styles.headerLink} to="/community">

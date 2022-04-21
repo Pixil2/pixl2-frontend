@@ -9,6 +9,7 @@
 
 .headerLogo {
   font-size: 3vw;
+  cursor: pointer;
 }
 
 .headerLinkContainer {
