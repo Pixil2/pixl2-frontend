@@ -7,7 +7,7 @@ import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Canvas from './Canvas';
 import { UserProvider } from '../../context/UserContext';
 
-it('Renders the staging form page for Canvas when the user is not signed in', async () => {
+it.skip('Renders the staging form page for Canvas when the user is not signed in', async () => {
   render(
     <UserProvider>
       <MemoryRouter initialEntries={['/canvas']}>

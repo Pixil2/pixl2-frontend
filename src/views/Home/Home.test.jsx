@@ -5,7 +5,12 @@ import { UserProvider } from '../../context/UserContext';
 
 it('Render the Home/Landing Page', async () => {
   render(
-    <UserProvider>
+    <UserProvider
+      user={{
+        id: 1,
+        username: 'whatever',
+      }}
+    >
       <MemoryRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -17,7 +22,7 @@ it('Render the Home/Landing Page', async () => {
   const loading = screen.getByText(/loading/i);
   expect(loading).toBeInTheDocument();
 
-  const logo = await screen.findByRole('heading', { name: /pixl 2/i });
+  const logo = await screen.findByRole('link', { name: /pixl 2/i });
   const profileLink = screen.getByRole('link', { name: /profile/i });
   const aboutLink = screen.getByRole('link', { name: /about/i });
   const description = screen.getByRole('heading', {

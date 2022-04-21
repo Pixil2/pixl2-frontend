@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Tests functionality of profile view 1`] = `
+<div>
+  <div
+    class="Profile"
+  >
+    <header
+      class="Header"
+    >
+      <img
+        class="headerLogo"
+        src="/path/image"
+      />
+      <div
+        class="headerLinkContainer"
+      >
+        <a
+          class="headerLink"
+          href="/community"
+        >
+          Community
+        </a>
+        <a
+          class="headerLink"
+          href="/about"
+        >
+          About
+        </a>
+        <button
+          class="headerButton"
+        >
+          SIGN OUT
+        </button>
+      </div>
+    </header>
+    <div
+      class="profileHeader"
+    >
+      <h1
+        class="profileTitle"
+      >
+        User Gallery
+      </h1>
+      <p
+        class="profileCaption"
+      >
+        Hey, nice work. Check out all of your amazing artwork below or get back in there and make some more!
+      </p>
+      <a
+        href="/canvas"
+      >
+        <button
+          class="createButton imageButton"
+        >
+          CREATE IMAGE
+        </button>
+      </a>
+    </div>
+    <div
+      class="ProfileContainer"
+    />
+  </div>
+</div>
+`;
