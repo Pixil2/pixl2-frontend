@@ -10,18 +10,22 @@
   width: 80vw;
   justify-content: space-between;
   margin: 10vh 10vh 10vh 10vh;
+  animation: fadeHome 1.25s ease-out;
 }
 
 .leftSide {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .leftSideCaption {
-  width: 75%;
-  font-size: 3vw;
-  margin-top: 12vh;
+  font-size: clamp(32px, 5vw, 96px);
+  margin-bottom: 0.5em;
+  padding-right: 1.5em;
+  max-width: 25ch;
+  /* margin-top: 12vh; */
+  font-family: var(--font-secondary);
 }
 
 .rightSide {
@@ -56,4 +60,16 @@
 .button:active {
   transform: scale(1.02);
   filter: drop-shadow(1px 1px 1px black);
+}
+
+@keyframes fadeHome {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

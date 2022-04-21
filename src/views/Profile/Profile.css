@@ -11,6 +11,7 @@
   gap: 2vw;
   padding-top: 6vw;
   padding-bottom: 10vw;
+  animation: fadeProfile 1s ease-out;
 }
 
 .profileGrid {
@@ -23,16 +24,20 @@
   align-items: center;
   margin: 6vh 0 2vh 0;
   gap: 2vh;
+  animation: fadeProfile 1s ease-out;
 }
 
 .profileTitle {
-  font-size: 3vw;
+  font-size: clamp(54px, 5vw, 96px);
+  font-family: var(--font-secondary);
 }
 
 .profileCaption {
   width: 60%;
   text-align: center;
-  font-size: 1.2vw;
+  font-size: clamp(21px, 2vw, 32px);
+  line-height: 0.9;
+  font-family: var(--font-secondary);
 }
 
 .image {
@@ -90,4 +95,16 @@
   font-size: 1.2vw;
   margin-top: 2vh;
   padding: 1vw;
+}
+
+@keyframes fadeProfile {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

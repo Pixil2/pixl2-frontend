@@ -13,6 +13,8 @@ export default function Grid({
 }) {
   const [pixelArray, setPixelArray] = useState([]);
   const [rainbowIndex, setRainbowIndex] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
+
   const rainbowArray = [
     '#f54242',
     '#f59642',
@@ -60,6 +62,9 @@ export default function Grid({
   }
 
   const handleClick = (index) => {
+    // DRAG FEATURE: uncomment line below
+    // if (!isClicked) return;
+
     const newImage = { ...image };
     let i = rainbowIndex;
 
@@ -86,11 +91,20 @@ export default function Grid({
 
   useEffect(() => {
     renderImage(image);
-  }, [image, tool, color]);
+  }, [image, tool, color, isClicked]);
 
   return (
     <div
       className={styles.Grid}
+      // DRAG FEATURE: uncomment line below
+      //   onMouseDown={() => {
+      //     setIsClicked(true);
+      //     console.log('clicked', isClicked);
+      //   }}
+      //   onMouseUp={() => {
+      //     setIsClicked(false);
+      //     console.log('clicked', isClicked);
+      //   }}
       style={{
         gridTemplateColumns: `repeat(${image.width}, 1fr)`,
         gridTemplateRows: `repeat(${image.height}, 1fr)`,

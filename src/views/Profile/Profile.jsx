@@ -47,12 +47,12 @@ export default function Profile() {
           Hey, nice work. Check out all of your amazing artwork below or get
           back in there and make some more!
         </p>
+        <Link to="/canvas">
+          <button className={`${styles.createButton} ${styles.imageButton}`}>
+            CREATE IMAGE
+          </button>
+        </Link>
       </div>
-      <Link to="/canvas">
-        <button className={`${styles.createButton} ${styles.imageButton}`}>
-          CREATE IMAGE
-        </button>
-      </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
           const tag = item.tags[0].name;

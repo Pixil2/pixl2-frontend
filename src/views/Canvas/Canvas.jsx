@@ -43,29 +43,31 @@ export default function Canvas({ edit = false }) {
   console.log('gridCapture', gridCapture);
 
   return (
-    <div className={styles.Canvas}>
+    <>
       <Header />
-      <div className={styles.canvasTools}>
-        <Toolbar
+      <div className={styles.Canvas}>
+        <div className={styles.canvasTools}>
+          <Toolbar
+            tool={tool}
+            setTool={setTool}
+            eraser={eraser}
+            image={image}
+            setImage={setImage}
+            color={color}
+            setColor={setColor}
+          />
+          <Prompt />
+        </div>
+        <Grid
           tool={tool}
-          setTool={setTool}
-          eraser={eraser}
           image={image}
           setImage={setImage}
+          eraser={eraser}
           color={color}
-          setColor={setColor}
+          setGridCapture={setGridCapture}
         />
-        <Prompt />
+        <CanvasControls gridCapture={gridCapture} image={image} edit={edit} />
       </div>
-      <Grid
-        tool={tool}
-        image={image}
-        setImage={setImage}
-        eraser={eraser}
-        color={color}
-        setGridCapture={setGridCapture}
-      />
-      <CanvasControls gridCapture={gridCapture} image={image} edit={edit} />
-    </div>
+    </>
   );
 }

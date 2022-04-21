@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 2vw;
   align-items: center;
+  animation: fadeCanvas 1.25s ease-out;
 }
 
 .CanvasForm {
@@ -145,4 +146,16 @@ input[type='color'] {
 .guestControls p {
   font-family: monospace;
   font-size: 2vh;
+}
+
+@keyframes fadeCanvas {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

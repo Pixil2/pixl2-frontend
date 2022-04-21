@@ -51,35 +51,36 @@ export default function Community() {
   //   console.log('animal', animal);
 
   return (
-    <div className={styles.Community}>
+    <>
       <Header />
-      <div className={styles.communityHeader}>
-        <h1 className={styles.communityTitle}>Community Gallery</h1>
-        <p className={styles.communityCaption}>
-          Hey, pixel people! Check out all of the awesome art that has been
-          created by our community.
-        </p>
-      </div>
-      <Link to="/canvas">
-        <button className={styles.createButton}>CREATE IMAGE</button>
-      </Link>
-      <div className={styles.imageContainer}>
-        {currentImages.map((item, index) => {
-          const tag = item.tags[0].name;
-          console.log(tag);
-          return (
-            <div key={uuid()}>
-              <div className={styles.imageHeader}>
-                <h1 className={styles.imageTitle}>{item.title}</h1>
-                <p className={styles.imageTag}>TAG: {tag}</p>
+      <div className={styles.Community}>
+        <div className={styles.communityHeader}>
+          <h1 className={styles.communityTitle}>Community Gallery</h1>
+          <p className={styles.communityCaption}>
+            Hey, pixel people! Check out all of the awesome art that has been
+            created by our community.
+          </p>
+        </div>
+        <Link to="/canvas">
+          <button className={styles.createButton}>CREATE IMAGE</button>
+        </Link>
+        <div className={styles.imageContainer}>
+          {currentImages.map((item, index) => {
+            const tag = item.tags[0].name;
+            console.log(tag);
+            return (
+              <div key={uuid()}>
+                <div className={styles.imageHeader}>
+                  <h1 className={styles.imageTitle}>{item.title}</h1>
+                  <p className={styles.imageTag}>TAG: {tag}</p>
+                </div>
+                <ProfileGrid image={item} />
               </div>
-              <ProfileGrid image={item} />
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.animalContainer}>
-        {/* {animal.map((item, index) => {
+            );
+          })}
+        </div>
+        <div className={styles.animalContainer}>
+          {/* {animal.map((item, index) => {
           const tag = item.tags.name;
           console.log(tag);
           return (
@@ -92,7 +93,8 @@ export default function Community() {
             </div>
           );
         })} */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
