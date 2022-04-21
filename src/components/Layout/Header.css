@@ -8,8 +8,12 @@
 }
 
 .headerLogo {
-  font-size: 3vw;
+  width: 12vw;
   cursor: pointer;
+}
+
+.headerLogo:hover {
+  transform: scale(1.05);
 }
 
 .headerLinkContainer {

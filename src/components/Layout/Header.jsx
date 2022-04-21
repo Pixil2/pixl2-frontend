@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.css';
 import { useCurrentUser } from '../../context/UserContext';
+import logo from '../../assets/PIXL-logo.png';
 
 export default function Header() {
   const { user, logout } = useCurrentUser();
@@ -19,9 +20,9 @@ export default function Header() {
 
   return (
     <header className={styles.Header}>
-      <h1 onClick={handleClick} className={styles.headerLogo}>
-        PIXL 2
-      </h1>
+      <Link to="/">
+        <img className={styles.headerLogo} src={logo} />
+      </Link>
       <div className={styles.headerLinkContainer}>
         {location.pathname === '/profile' ? (
           <Link className={styles.headerLink} to="/community">
