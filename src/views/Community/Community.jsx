@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { getAllImages } from '../../services/images';
-import { getImageByTagId } from '../../services/tags';
 import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { v4 as uuid } from 'uuid';
 import styles from './Community.css';
@@ -41,7 +40,7 @@ export default function Community() {
           <button className={styles.createButton}>CREATE IMAGE</button>
         </Link>
         <div className={styles.imageContainer}>
-          {currentImages.map((item, index) => {
+          {currentImages.map((item) => {
             const tag = item.tags[0].name;
             return (
               <div className={styles.image} key={uuid()}>

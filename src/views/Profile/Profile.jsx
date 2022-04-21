@@ -54,7 +54,7 @@ export default function Profile() {
         </Link>
       </div>
       <div className={styles.ProfileContainer}>
-        {currentImages.map((item, index) => {
+        {currentImages.map((item) => {
           const tag = item.tags[0].name;
           return (
             <div key={uuid()}>

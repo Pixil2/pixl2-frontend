@@ -30,8 +30,7 @@ export default function Header() {
           </Link>
         </>
       );
-    }
-    if (location.pathname === '/community') {
+    } else if (location.pathname === '/community') {
       return (
         <>
           <Link className={styles.headerLink} to="/profile">

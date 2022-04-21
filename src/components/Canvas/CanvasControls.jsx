@@ -34,13 +34,13 @@ export default function CanvasControls({ image, edit = false }) {
     } else {
       const res = await saveImage(image);
       saveTag(res.id, selectedTag.id);
-      window.location.href = './profile';
+      navigate('/profile');
     }
   };
 
   const handleUpdate = async (image) => {
     await updateImage(image);
-    window.location.href = '../../profile';
+    navigate('/profile');
   };
 
   const handleClick = async () => {
