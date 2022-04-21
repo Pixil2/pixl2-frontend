@@ -1,9 +1,10 @@
-.Canvas {
+.canvasContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2vw;
   align-items: center;
+  animation: fadeCanvas 1.25s ease-out;
 }
 
 .CanvasForm {
@@ -18,24 +19,40 @@
   margin-top: 20vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1vh;
   font-size: 1.5vw;
 }
 
 .canvasFormInputs p {
+  font-size: clamp(20px, 3vw, 30px);
   text-align: center;
   margin-bottom: 2vh;
+  font-family: var(--font-secondary);
+}
+
+.submit {
+  width: 10vw;
 }
 
 .canvasButton {
-  margin-top: 1vh;
-  background-color: white;
-  border: black 0.3vw solid;
-  padding: 0.5vw;
-  font-family: monospace;
-  font-size: 1vw;
-  width: auto;
-  align-self: center;
+  background-color: black;
+  color: white;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
+}
+
+.canvasButton:hover {
+  transform: scale(1.05);
+}
+
+.canvasButton:active {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .CanvasControls {
@@ -45,25 +62,58 @@
 }
 
 .canvasSelect {
-  margin-top: 1vh;
   background-color: white;
   border: black 0.3vw solid;
-  padding: 0.42vw;
-  font-family: monospace;
-  font-size: 1vw;
-  width: auto;
-  align-self: center;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
+}
+
+.canvasTools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Prompt {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2.5vh;
+  margin-top: 1.5vh;
+}
+
+.promptText {
+  font-family: var(--font-secondary);
+  text-align: center;
+  font-size: clamp(20px, 3vw, 30px);
+}
+
+.promptButton {
+  border: 0.3vw solid black;
+  background-color: white;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  text-transform: uppercase;
+  padding: 0.5em 1.5em;
+  margin-top: 1vh;
+  align-self: center;
+}
+
+.promptButton:hover {
+  transform: scale(1.05);
+}
+
+.promptButton:active {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .ToolBar {
-  margin: 2.5vh;
+  margin-top: 4vh;
 }
 
 .toolBarButton {
@@ -81,11 +131,11 @@
 }
 
 .toolBarImg {
-  height: 6vh;
+  height: 3vw;
 }
 
 .toolBarInput {
-  height: 6vh;
+  height: 3vw;
 }
 
 .toolBarInput:hover {
@@ -105,6 +155,18 @@ input[type='color'] {
 }
 
 .guestControls p {
-  font-family: monospace;
-  font-size: 2vh;
+  font-family: var(--font-secondary);
+  font-size: 2vw;
+}
+
+@keyframes fadeCanvas {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

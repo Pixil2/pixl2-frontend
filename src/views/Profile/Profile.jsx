@@ -41,30 +41,44 @@ export default function Profile() {
   return (
     <div className={styles.Profile}>
       <Header />
-      <Link to="/canvas">
-        <button>Create Image</button>
-      </Link>
+      <div className={styles.profileHeader}>
+        <h1 className={styles.profileTitle}>User Gallery</h1>
+        <p className={styles.profileCaption}>
+          Hey, nice work. Check out all of your amazing artwork below or get
+          back in there and make some more!
+        </p>
+        <Link to="/canvas">
+          <button className={`${styles.createButton} ${styles.imageButton}`}>
+            CREATE IMAGE
+          </button>
+        </Link>
+      </div>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
           const tag = item.tags[0].name;
-          console.log(tag);
           return (
             <div key={uuid()}>
-              <p>{item.title}</p>
+              <div className={styles.imageHeader}>
+                <h1 className={styles.imageTitle}>{item.title}</h1>
+                <p className={styles.imageTag}>{tag}</p>
+              </div>
               <ProfileGrid image={item} />
-              <button
-                value={item.id}
-                onClick={(e) => handleEdit(e.target.value)}
-              >
-                edit
-              </button>
-              <button
-                value={item.id}
-                onClick={(e) => handleDelete(e.target.value)}
-              >
-                delete
-              </button>
-              {tag}
+              <div className={styles.imageButtons}>
+                <button
+                  className={styles.imageButton}
+                  value={item.id}
+                  onClick={(e) => handleEdit(e.target.value)}
+                >
+                  EDIT
+                </button>
+                <button
+                  className={styles.imageButton}
+                  value={item.id}
+                  onClick={(e) => handleDelete(e.target.value)}
+                >
+                  DELETE
+                </button>
+              </div>
             </div>
           );
         })}

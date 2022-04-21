@@ -1,20 +1,15 @@
 import { useEffect, useState } from 'react';
-import {
-  getUserImages,
-  deleteImageById,
-  getAllImages,
-} from '../../services/images';
+import { getAllImages } from '../../services/images';
+import { getImageByTagId } from '../../services/tags';
 import ProfileGrid from '../../components/Profile/ProfileGrid';
-import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
 import styles from './Community.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Layout/Header';
 import { getTagByImageId } from '../../services/tags';
 
 export default function Community() {
   const [currentImages, setCurrentImages] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetch = async () => {
@@ -31,24 +26,42 @@ export default function Community() {
     fetch();
   }, []);
 
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await getImageByTagId(1);
+      setAnimal(res.images);
+    };
+    fetch();
+  }, []);
+
   return (
-    <div className={styles.Profile}>
+    <div className={styles.communityContainer}>
       <Header />
-      <Link to="/canvas">
-        <button>Create Image</button>
-      </Link>
-      <div className={styles.ProfileContainer}>
-        {currentImages.map((item, index) => {
-          const tag = item.tags[0].name;
-          console.log(tag);
-          return (
-            <div key={uuid()}>
-              <p>{item.title}</p>
-              <ProfileGrid image={item} />
-              Tag: {tag}
-            </div>
-          );
-        })}
+      <div className={styles.communityContainer}>
+        <div className={styles.communityHeader}>
+          <h1 className={styles.communityTitle}>Community Gallery</h1>
+          <p className={styles.communityCaption}>
+            Hey, pixel people! Check out all of the awesome art that has been
+            created by our community.
+          </p>
+        </div>
+        <Link to="/canvas">
+          <button className={styles.createButton}>CREATE IMAGE</button>
+        </Link>
+        <div className={styles.imageContainer}>
+          {currentImages.map((item, index) => {
+            const tag = item.tags[0].name;
+            return (
+              <div className={styles.image} key={uuid()}>
+                <div className={styles.imageHeader}>
+                  <h1 className={styles.imageTitle}>{item.title}</h1>
+                  <p className={styles.imageTag}>TAG: {tag}</p>
+                </div>
+                <ProfileGrid image={item} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

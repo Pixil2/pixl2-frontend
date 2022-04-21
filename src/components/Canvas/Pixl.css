@@ -1,1 +1,9 @@
+.Pixl:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(1px 1px 1px gray);
+}
 
+.Pixl:active {
+  transform: scale(1.01);
+  filter: drop-shadow(1px 1px 1px black);
+}
