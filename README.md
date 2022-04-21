@@ -42,6 +42,12 @@ Our core project planning was done on Miro board and you can view our planning:
 The initial Wireframe created by the team set the foundations for the App.
 ![PIXL2](./src/assets/wireframe.png)
 
+### Backend / Third Party API
+
+This app runs on a PostgreSQL database using Node.js/Express.
+
+The random prompt generator uses the Random Word Form API: <a href = "https://random-word-form.herokuapp.com/">https://random-word-form.herokuapp.com/</a>
+
 #### Original Project
 
 GitHub: <a href = "https://github.com/PIXLAPP/pixel-art-project">https://github.com/PIXLAPP/pixel-art-project</a>
