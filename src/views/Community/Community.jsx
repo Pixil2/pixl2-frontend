@@ -39,7 +39,8 @@ export default function Community() {
       <div className={styles.communityHeader}>
         <h1 className={styles.communityTitle}>Community Gallery</h1>
         <p className={styles.communityCaption}>
-          Check out other peoples awesome art below!!
+          Hey, pixel people! Check out all of the awesome art that has been
+          created by our community.
         </p>
       </div>
       <Link to="/canvas">

@@ -46,8 +46,8 @@ export default function Profile() {
       <div className={styles.profileHeader}>
         <h1 className={styles.profileTitle}>User Gallery</h1>
         <p className={styles.profileCaption}>
-          hey nice work! checkout all of your awesome artwork below or create a
-          new image!
+          Hey, nice work! Check out all of your amazing artwork below or get in
+          there and create some more.
         </p>
       </div>
       <Link to="/canvas">
