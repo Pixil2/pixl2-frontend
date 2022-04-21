@@ -28,10 +28,10 @@ export default function Home() {
           </h4>
           <div className={styles.signIn}>
             <button className={styles.button} onClick={handleSignIn}>
-              Sign-in with Github
+              SIGN-IN WITH GITHUB
             </button>
             <button onClick={handleContinue} className={styles.button}>
-              Continue as Guest
+              CONTINUE AS GUEST
             </button>
           </div>
         </div>

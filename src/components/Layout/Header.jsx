@@ -23,9 +23,6 @@ export default function Header() {
       <h1 onClick={handleClick} className={styles.headerLogo}>
         PIXL 2
       </h1>
-      {/* <Link to="/">
-        <img className={styles.headerLogo} src={logo} />
-      </Link> */}
       <div className={styles.headerLinkContainer}>
         {location.pathname === '/profile' ? (
           <Link className={styles.headerLink} to="/community">
@@ -41,7 +38,7 @@ export default function Header() {
         </Link>
         {user?.id && (
           <button className={styles.headerButton} onClick={handleLogOut}>
-            Log Out
+            SIGN OUT
           </button>
         )}
       </div>
