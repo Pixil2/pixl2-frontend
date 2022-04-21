@@ -14,7 +14,7 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   const login = async (credentials) => {
     try {
@@ -41,7 +41,7 @@ export const UserProvider = ({ children }) => {
   );
 
   return (
-    <UserContext.Provider value={state}>
+    <UserContext.Provider value={{ user, logout, state }}>
       {renderView({ ...state, children })}
     </UserContext.Provider>
   );

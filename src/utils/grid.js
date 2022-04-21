@@ -1,6 +1,3 @@
-import Pixl from '../components/Canvas/Pixl';
-import { v4 as uuid } from 'uuid';
-
 export function createImage(title, heightInput, widthInput) {
   let area = heightInput * widthInput;
   let halfArea = Math.ceil(area / 2);

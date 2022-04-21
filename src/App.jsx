@@ -13,25 +13,13 @@ export default function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route
-            exact
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
+          <Route element={<ProtectedRoute />}>
+            <Route exact path="/profile" element={<Profile />} />
+          </Route>
           <Route exact path="/canvas" element={<Canvas />} />
-          <Route
-            exact
-            path="/canvas/edit/:id"
-            element={
-              <ProtectedRoute>
-                <Canvas edit />
-              </ProtectedRoute>
-            }
-          />
+          <Route element={<ProtectedRoute />}>
+            <Route exact path="/canvas/edit/:id" element={<Canvas edit />} />
+          </Route>
           <Route exact path="/about" element={<AboutUs />} />
           <Route exact path="/community" element={<Community />} />
         </Routes>

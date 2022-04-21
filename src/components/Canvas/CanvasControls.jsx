@@ -4,12 +4,13 @@ import { useCurrentUser } from '../../context/UserContext';
 import { saveImage, updateImage } from '../../services/images';
 import { getAllTags, saveTag } from '../../services/tags';
 import styles from '../../views/Canvas/Canvas.css';
-import html2canvas from 'html2canvas';
+import { useNavigate } from 'react-router-dom';
 
 export default function CanvasControls({ image, edit = false }) {
   const [tagList, setTagList] = useState([]);
   const [tag, setTag] = useState('unselected');
   const { user } = useCurrentUser();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTags = async () => {
@@ -33,18 +34,17 @@ export default function CanvasControls({ image, edit = false }) {
     } else {
       const res = await saveImage(image);
       saveTag(res.id, selectedTag.id);
-      window.location.href = './profile';
+      navigate('/profile');
     }
   };
 
   const handleUpdate = async (image) => {
     await updateImage(image);
-    window.location.href = '../../profile';
+    navigate('/profile');
   };
 
-  const handleCapture = async () => {
-    const capture = await html2canvas(image);
-    console.log(capture);
+  const handleClick = async () => {
+    navigate('/');
   };
 
   return (
@@ -65,17 +65,14 @@ export default function CanvasControls({ image, edit = false }) {
             className={styles.canvasButton}
             onClick={() => handleSave(image)}
           >
-            Save
-          </button>
-          <button className={styles.canvasButton} onClick={handleCapture}>
-            Download
+            SAVE
           </button>
         </>
       )}
       {!user.id && (
-        <div className={styles.guestControls}>
-          <button className={styles.canvasButton}>Download</button>
-          <p>To create a profile and save your image, please sign in!</p>
+        <div onClick={handleClick} className={styles.guestControls}>
+          <button className={styles.canvasButton}>GO BACK HOME</button>
+          <p>To save your image, please sign in!</p>
         </div>
       )}
       {edit && (
@@ -84,7 +81,7 @@ export default function CanvasControls({ image, edit = false }) {
             className={styles.canvasButton}
             onClick={() => handleUpdate(image)}
           >
-            Update
+            UPDATE
           </button>
         </>
       )}

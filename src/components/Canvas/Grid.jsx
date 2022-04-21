@@ -3,16 +3,10 @@ import styles from './Grid.css';
 import Pixl from './Pixl';
 import { v4 as uuid } from 'uuid';
 
-export default function Grid({
-  image,
-  setImage,
-  tool,
-  eraser,
-  color,
-  setGridCapture,
-}) {
+export default function Grid({ image, setImage, tool, eraser, color }) {
   const [pixelArray, setPixelArray] = useState([]);
   const [rainbowIndex, setRainbowIndex] = useState(0);
+
   const rainbowArray = [
     '#f54242',
     '#f59642',
@@ -70,12 +64,10 @@ export default function Grid({
     } else if (tool === 'rainbow') {
       if (rainbowIndex === 6) {
         i = 0;
-        console.log(i);
         newImage.colorArray[index] = rainbowArray[rainbowIndex];
         setRainbowIndex(i);
         i++;
       } else {
-        console.log(i);
         newImage.colorArray[index] = rainbowArray[rainbowIndex];
         i++;
         setRainbowIndex(i);

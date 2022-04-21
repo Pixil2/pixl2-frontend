@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../../views/Canvas/Canvas.css';
 
 export default function Prompt() {
@@ -24,11 +24,11 @@ export default function Prompt() {
   return (
     <div className={styles.Prompt}>
       {noun && (
-        <span className={prompt}>
+        <span className={styles.promptText}>
           You could draw a(n) {adjective} {noun}!
         </span>
       )}
-      <button className={styles.canvasButton} onClick={handleClick}>
+      <button className={styles.promptButton} onClick={handleClick}>
         Generate a prompt!
       </button>
     </div>
