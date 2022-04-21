@@ -26,3 +26,16 @@ export const getTagByImageId = async (imageId) => {
   );
   return await res.json();
 };
+
+export const getImageByTagId = async (tagId) => {
+  const res = await fetch(
+    `${process.env.API_URL}/api/v1/tags/${tagId}/images`,
+    {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    }
+  );
+  return await res.json();
+};

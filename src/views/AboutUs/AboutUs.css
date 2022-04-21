@@ -1,8 +1,15 @@
-.About {
+.aboutUsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: fadeAbout 1s ease-out;
+}
+
+.aboutTitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(54px, 5vw, 96px);
+  margin: 6vh 0 4vh 0;
 }
 
 .aboutBioContainer {
@@ -16,4 +23,16 @@
 
 .aboutBio img {
   width: 15vw;
+}
+
+@keyframes fadeAbout {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

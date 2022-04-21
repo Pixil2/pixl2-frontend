@@ -44,19 +44,18 @@ export default function Profile() {
       <div className={styles.profileHeader}>
         <h1 className={styles.profileTitle}>User Gallery</h1>
         <p className={styles.profileCaption}>
-          hey nice work! checkout all of your awesome artwork below or create a
-          new image!
+          Hey, nice work. Check out all of your amazing artwork below or get
+          back in there and make some more!
         </p>
+        <Link to="/canvas">
+          <button className={`${styles.createButton} ${styles.imageButton}`}>
+            CREATE IMAGE
+          </button>
+        </Link>
       </div>
-      <Link to="/canvas">
-        <button className={`${styles.createButton} ${styles.imageButton}`}>
-          Create Image
-        </button>
-      </Link>
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
           const tag = item.tags[0].name;
-          console.log(tag);
           return (
             <div key={uuid()}>
               <div className={styles.imageHeader}>
@@ -70,14 +69,14 @@ export default function Profile() {
                   value={item.id}
                   onClick={(e) => handleEdit(e.target.value)}
                 >
-                  edit
+                  EDIT
                 </button>
                 <button
                   className={styles.imageButton}
                   value={item.id}
                   onClick={(e) => handleDelete(e.target.value)}
                 >
-                  delete
+                  DELETE
                 </button>
               </div>
             </div>

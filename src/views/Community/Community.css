@@ -1,7 +1,8 @@
-.Community {
+.communityContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeCommunity 1.25s ease-out;
 }
 
 .imageContainer {
@@ -10,18 +11,11 @@
   grid-template-rows: auto;
   gap: 2vw;
   padding-top: 6vw;
+  padding-bottom: 10vw;
 }
 
 .profileGrid {
   border: 5px solid black;
-}
-
-.image {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  height: 250px;
-  width: 250px;
 }
 
 .imageHeader {
@@ -32,30 +26,38 @@
 }
 
 .imageTitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(25px, 3vw, 40px);
   text-transform: capitalize;
-  font-size: 2vw;
 }
 
 .imageTag {
-  text-transform: lowercase;
-  font-family: monospace;
+  text-transform: uppercase;
+  font-family: var(--primary);
+  font-size: clamp(8px, 1vw, 12px);
 }
+
 .communityHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 6vh 0 2vh 0;
-  gap: 2vh;
+  gap: 2.5vh;
 }
 
-.createButton {
-  background-color: white;
-  border: black 0.3vw solid;
-  padding: 1vw;
-  font-family: monospace;
-  font-size: 2vw;
-  margin-top: 2vh;
+.communityTitle {
+  font-size: clamp(54px, 5vw, 96px);
+  font-family: var(--font-secondary);
 }
+
+.communityCaption {
+  width: 60%;
+  text-align: center;
+  font-size: clamp(21px, 2vw, 32px);
+  line-height: 0.9;
+  font-family: var(--font-secondary);
+}
+
 .createButton:hover {
   transform: scale(1.02);
 }
@@ -66,6 +68,24 @@
 }
 
 .createButton {
-  font-size: 2vw;
-  margin-top: 2vh;
+  background-color: black;
+  color: white;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
+}
+
+@keyframes fadeCommunity {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }

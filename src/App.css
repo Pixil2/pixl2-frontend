@@ -1,11 +1,27 @@
+:root {
+  --font-primary: 'Pixel-Primary', sans-serif;
+  --font-secondary: 'Pixel-Secondary', sans-serif;
+  --font-size-nav: clamp(10px, 0.75vw, 16px);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
 }
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@font-face {
+  font-family: 'Pixel-Primary';
+  src: url('./assets/fonts/pixel-primary.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pixel-Secondary';
+  src: url('./assets/fonts/pixel-secondary.otf') format('opentype');
 }
