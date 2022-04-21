@@ -27,9 +27,9 @@ export default function App() {
             exact
             path="/canvas/edit/:id"
             element={
-              //   <ProtectedRoute>
-              <Canvas edit />
-              //   </ProtectedRoute>
+              <ProtectedRoute>
+                <Canvas edit />
+              </ProtectedRoute>
             }
           />
           <Route exact path="/about" element={<AboutUs />} />

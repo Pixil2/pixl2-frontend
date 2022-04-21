@@ -11,7 +11,6 @@ export default function Home() {
     navigate('/canvas');
   };
 
-  //refactor to use API_URL
   const handleSignIn = () => {
     window.location.href = `${process.env.API_URL}/api/v1/users/login`;
   };
@@ -22,15 +21,17 @@ export default function Home() {
       <main className={styles.homeContainer}>
         <div className={styles.leftSide}>
           <h4 className={styles.leftSideCaption}>
-            An interactive tool that brings creativity to life one pixel at a
-            time.
+            Bringing your creativity to life one pixel at a time.
           </h4>
           <div className={styles.signIn}>
             <button className={styles.button} onClick={handleSignIn}>
-              Sign-in with Github
+              SIGN-IN WITH GITHUB
             </button>
-            <button onClick={handleContinue} className={styles.button}>
-              Continue as Guest
+            <button
+              onClick={handleContinue}
+              className={`${styles.button} ${styles.continue}`}
+            >
+              CONTINUE AS GUEST
             </button>
           </div>
         </div>

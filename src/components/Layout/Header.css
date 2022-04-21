@@ -3,12 +3,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10vh 0 0 0;
+  padding: 8vh 0 0 0;
   width: 80vw;
+  animation: fade 1s ease-out;
 }
 
 .headerLogo {
-  font-size: 3vw;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  display: block;
+  width: clamp(124px, 12vw, 188px);
+  height: auto;
 }
 
 .headerLinkContainer {
@@ -19,16 +24,11 @@
 }
 
 .headerLink {
-  font-size: 1.3vw;
-  font-family: monospace;
-}
-
-.headerButton {
-  background-color: white;
-  border: black 0.3vw solid;
-  padding: 0.5vw;
-  font-family: monospace;
-  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  color: black;
+  text-decoration: none;
 }
 
 .headerButton:hover {
@@ -38,4 +38,35 @@
 .headerButton:active {
   transform: scale(1.02);
   filter: drop-shadow(1px 1px 1px black);
+}
+
+.headerButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
+}
+
+.headerButton:hover {
+  transform: scale(1.02);
+}
+
+.headerButton:active {
+  transform: scale(1.02);
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -25px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
