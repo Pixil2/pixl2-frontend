@@ -44,7 +44,6 @@ it('Tests functionality of profile view', async () => {
   expect(loading).toBeInTheDocument();
   await waitForElementToBeRemoved(() => screen.getByText(/loading/i));
 
-  screen.debug();
   const createButton = await screen.findByRole('button', {
     name: /create image/i,
   });
