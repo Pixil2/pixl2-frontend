@@ -26,6 +26,9 @@ const user = {
 };
 
 const server = setupServer(
+  rest.get(`${process.env.API_URL}/api/v1/images`, (req, res, ctx) => {
+    return res(ctx.json(image));
+  }),
   rest.get(`${process.env.API_URL}/api/v1/users/me`, (req, res, ctx) => {
     return res(ctx.json(user));
   }),
