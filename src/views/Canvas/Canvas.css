@@ -40,6 +40,15 @@
   align-self: center;
 }
 
+.canvasButton:hover {
+  transform: scale(1.05);
+}
+
+.canvasButton:active {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 2px 2px black);
+}
+
 .CanvasControls {
   display: flex;
   gap: 2vh;
@@ -83,11 +92,11 @@
 }
 
 .promptButton:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .promptButton:active {
-  transform: scale(1.1);
+  transform: scale(1.05);
   filter: drop-shadow(2px 2px 2px black);
 }
 
