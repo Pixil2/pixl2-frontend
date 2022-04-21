@@ -15,10 +15,10 @@ PIXL 2 is an app designed as a fun tool for escaping the stress of existing in 2
   <br>
   GitHub: <a href = "https://github.com/phoenix-nicholson">https://github.com/phoenix-nicholson</a>
 
-  - James
-    LinkedIn: <a href = "https://www.linkedin.com/in/james-demiraiakian/">https://www.linkedin.com/in/james-demiraiakian/</a>
-    <br>
-    GitHub: <a href = "https://github.com/james-demiraiakian">https://github.com/james-demiraiakian</a>
+- James
+  LinkedIn: <a href = "https://www.linkedin.com/in/james-demiraiakian/">https://www.linkedin.com/in/james-demiraiakian/</a>
+  <br>
+  GitHub: <a href = "https://github.com/james-demiraiakian">https://github.com/james-demiraiakian</a>
 
 - Andrew
   <br>
