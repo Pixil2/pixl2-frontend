@@ -31,6 +31,11 @@ Object {
             >
               About
             </a>
+            <button
+              class="headerButton"
+            >
+              Log Out
+            </button>
           </div>
         </header>
         <a
@@ -73,6 +78,11 @@ Object {
           >
             About
           </a>
+          <button
+            class="headerButton"
+          >
+            Log Out
+          </button>
         </div>
       </header>
       <a

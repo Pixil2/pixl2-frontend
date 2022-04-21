@@ -21,17 +21,20 @@ const image = {
 };
 
 const user = {
-  id: 1,
-  username: 'whatever',
+  id: 100000000000,
+  username: 'testUser',
 };
 
 const server = setupServer(
-  rest.get('/me', (req, res, ctx) => {
+  rest.get(`${process.env.API_URL}/api/v1/users/me`, (req, res, ctx) => {
     return res(ctx.json(user));
   }),
-  rest.get('/images', (req, res, ctx) => {
-    return res(ctx.json(image));
-  })
+  rest.get(
+    `${process.env.API_URL}/api/v1/users/100000000000`,
+    (req, res, ctx) => {
+      return res(ctx.json(image));
+    }
+  )
 );
 
 beforeAll(() => {
