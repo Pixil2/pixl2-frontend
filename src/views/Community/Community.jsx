@@ -26,14 +26,6 @@ export default function Community() {
     fetch();
   }, []);
 
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await getImageByTagId(1);
-      setAnimal(res.images);
-    };
-    fetch();
-  }, []);
-
   return (
     <div className={styles.communityContainer}>
       <Header />
