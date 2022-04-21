@@ -1,4 +1,4 @@
-.Community {
+.communityContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,14 +18,6 @@
   border: 5px solid black;
 }
 
-.image {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  height: 250px;
-  width: 250px;
-}
-
 .imageHeader {
   display: flex;
   flex-direction: column;
@@ -34,14 +26,15 @@
 }
 
 .imageTitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(25px, 3vw, 40px);
   text-transform: capitalize;
-  font-size: 2vw;
 }
 
 .imageTag {
   text-transform: uppercase;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.2vw;
+  font-family: var(--primary);
+  font-size: clamp(8px, 1vw, 12px);
 }
 
 .communityHeader {
@@ -53,13 +46,16 @@
 }
 
 .communityTitle {
-  font-size: 3vw;
+  font-size: clamp(54px, 5vw, 96px);
+  font-family: var(--font-secondary);
 }
 
 .communityCaption {
   width: 60%;
   text-align: center;
-  font-size: 1.2vw;
+  font-size: clamp(21px, 2vw, 32px);
+  line-height: 0.9;
+  font-family: var(--font-secondary);
 }
 
 .createButton {

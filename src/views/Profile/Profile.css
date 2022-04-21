@@ -40,30 +40,24 @@
   font-family: var(--font-secondary);
 }
 
-.image {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  height: 250px;
-  width: 250px;
-}
-
 .imageHeader {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1vh;
 }
 
 .imageTitle {
+  font-family: var(--font-secondary);
+  font-size: clamp(25px, 3vw, 40px);
   text-transform: capitalize;
-  font-size: 2vw;
 }
 
 .imageTag {
   text-transform: uppercase;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.2vw;
+  font-family: var(--primary);
+  font-size: clamp(8px, 1vw, 12px);
 }
 
 .imageButtons {

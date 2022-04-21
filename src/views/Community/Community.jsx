@@ -51,9 +51,9 @@ export default function Community() {
   //   console.log('animal', animal);
 
   return (
-    <>
+    <div className={styles.communityContainer}>
       <Header />
-      <div className={styles.Community}>
+      <div className={styles.communityContainer}>
         <div className={styles.communityHeader}>
           <h1 className={styles.communityTitle}>Community Gallery</h1>
           <p className={styles.communityCaption}>
@@ -67,9 +67,8 @@ export default function Community() {
         <div className={styles.imageContainer}>
           {currentImages.map((item, index) => {
             const tag = item.tags[0].name;
-            console.log(tag);
             return (
-              <div key={uuid()}>
+              <div className={styles.image} key={uuid()}>
                 <div className={styles.imageHeader}>
                   <h1 className={styles.imageTitle}>{item.title}</h1>
                   <p className={styles.imageTag}>TAG: {tag}</p>
@@ -95,6 +94,6 @@ export default function Community() {
         })} */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
