@@ -43,9 +43,9 @@ export default function Canvas({ edit = false }) {
   console.log('gridCapture', gridCapture);
 
   return (
-    <>
+    <div className={styles.Canvas}>
       <Header />
-      <div className={styles.Canvas}>
+      <div className={styles.canvasContainer}>
         <div className={styles.canvasTools}>
           <Toolbar
             tool={tool}
@@ -68,6 +68,6 @@ export default function Canvas({ edit = false }) {
         />
         <CanvasControls gridCapture={gridCapture} image={image} edit={edit} />
       </div>
-    </>
+    </div>
   );
 }

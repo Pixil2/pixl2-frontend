@@ -5,9 +5,9 @@ import rainbowpattern from '../../assets/rainbowpattern.png';
 
 export default function AboutUs() {
   return (
-    <>
+    <div className={styles.AboutUs}>
       <Header />
-      <div className={styles.AboutUs}>
+      <div className={styles.aboutUsContainer}>
         <h1 className={styles.aboutTitle}>About Us</h1>
         <div className={styles.aboutBioContainer}>
           <div className={styles.aboutBio}>
@@ -56,6 +56,6 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
