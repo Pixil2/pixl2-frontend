@@ -23,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   margin: 6vh 0 2vh 0;
-  gap: 2vh;
+  gap: 2.5vh;
   animation: fadeProfile 1s ease-out;
 }
 
