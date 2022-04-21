@@ -36,7 +36,6 @@ export default function Community() {
   useEffect(() => {
     const fetch = async () => {
       const res = await getImageByTagId(1);
-      console.log('res.images', res.images);
       setAnimal(res.images);
     };
     fetch();

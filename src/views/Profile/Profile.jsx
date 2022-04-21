@@ -56,7 +56,6 @@ export default function Profile() {
       <div className={styles.ProfileContainer}>
         {currentImages.map((item, index) => {
           const tag = item.tags[0].name;
-          console.log(tag);
           return (
             <div key={uuid()}>
               <div className={styles.imageHeader}>

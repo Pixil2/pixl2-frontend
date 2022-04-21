@@ -11,12 +11,9 @@ export default function Home() {
     navigate('/canvas');
   };
 
-  //refactor to use API_URL
   const handleSignIn = () => {
     window.location.href = `${process.env.API_URL}/api/v1/users/login`;
   };
-
-  console.log('user', user);
 
   return (
     <div className={styles.Home}>
