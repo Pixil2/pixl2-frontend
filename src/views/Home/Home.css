@@ -21,7 +21,7 @@
 .leftSideCaption {
   width: 75%;
   font-size: 3vw;
-  margin-top: 10vh;
+  margin-top: 12vh;
 }
 
 .rightSide {
@@ -43,7 +43,6 @@
 .button {
   background-color: black;
   color: white;
-  /* border: black 0.3vw solid; */
   border: none;
   padding: 1.2vw;
   font-family: 'Roboto Mono', monospace;

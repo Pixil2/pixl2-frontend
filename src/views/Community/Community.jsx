@@ -4,6 +4,7 @@ import {
   deleteImageById,
   getAllImages,
 } from '../../services/images';
+import { getImageByTagId } from '../../services/tags';
 import ProfileGrid from '../../components/Profile/ProfileGrid';
 import { getCurrentUser } from '../../services/users';
 import { v4 as uuid } from 'uuid';
@@ -14,9 +15,8 @@ import { getTagByImageId } from '../../services/tags';
 import { useCurrentUser } from '../../context/UserContext';
 
 export default function Community() {
-  const { user } = useCurrentUser();
   const [currentImages, setCurrentImages] = useState([]);
-  const navigate = useNavigate();
+  const [animal, setAnimal] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
@@ -32,6 +32,23 @@ export default function Community() {
     };
     fetch();
   }, []);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await getImageByTagId(1);
+      console.log('res.images', res.images);
+      setAnimal(res.images);
+    };
+    fetch();
+  }, []);
+
+  //   const getTaggedImages = async (id) => {
+  //     const taggedImages = await getImageByTagId(id);
+  //     console.log('taggedImages', taggedImages);
+  //     return taggedImages;
+  //   };
+
+  //   console.log('animal', animal);
 
   return (
     <div className={styles.Community}>
@@ -60,6 +77,21 @@ export default function Community() {
             </div>
           );
         })}
+      </div>
+      <div className={styles.animalContainer}>
+        {/* {animal.map((item, index) => {
+          const tag = item.tags.name;
+          console.log(tag);
+          return (
+            <div key={uuid()}>
+              <div className={styles.imageHeader}>
+                <h1 className={styles.imageTitle}>{item.title}</h1>
+                <p className={styles.imageTag}>TAG: {tag}</p>
+              </div>
+              <ProfileGrid image={item} />
+            </div>
+          );
+        })} */}
       </div>
     </div>
   );
