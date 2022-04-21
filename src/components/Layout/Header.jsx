@@ -20,9 +20,12 @@ export default function Header() {
 
   return (
     <header className={styles.Header}>
-      <Link to="/">
+      <h1 onClick={handleClick} className={styles.headerLogo}>
+        PIXL 2
+      </h1>
+      {/* <Link to="/">
         <img className={styles.headerLogo} src={logo} />
-      </Link>
+      </Link> */}
       <div className={styles.headerLinkContainer}>
         {location.pathname === '/profile' ? (
           <Link className={styles.headerLink} to="/community">

@@ -8,12 +8,9 @@
 }
 
 .headerLogo {
-  width: 12vw;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5vw;
   cursor: pointer;
-}
-
-.headerLogo:hover {
-  transform: scale(1.05);
 }
 
 .headerLinkContainer {
@@ -24,16 +21,16 @@
 }
 
 .headerLink {
-  font-size: 1.5vw;
-  font-family: monospace;
+  font-size: 1.3vw;
+  font-family: 'Poppins', sans-serif;
 }
 
 .headerButton {
   background-color: white;
   border: black 0.3vw solid;
   padding: 0.5vw;
-  font-family: monospace;
-  font-size: 1vw;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.3vw;
 }
 
 .headerButton:hover {
@@ -49,7 +46,7 @@
   background-color: white;
   border: black 0.3vw solid;
   padding: 0.5vw;
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1vw;
 }
 
