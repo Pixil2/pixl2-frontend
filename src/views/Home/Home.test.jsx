@@ -22,7 +22,7 @@ it('Render the Home/Landing Page', async () => {
   const loading = screen.getByText(/loading/i);
   expect(loading).toBeInTheDocument();
 
-  const logo = await screen.findByRole('heading', { name: /pixl 2/i });
+  const logo = await screen.findByRole('link', { name: /pixl 2/i });
   const profileLink = screen.getByRole('link', { name: /profile/i });
   const aboutLink = screen.getByRole('link', { name: /about/i });
   const description = screen.getByRole('heading', {
