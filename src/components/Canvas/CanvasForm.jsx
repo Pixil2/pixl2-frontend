@@ -46,7 +46,10 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
           required
         />
 
-        <button className={styles.canvasButton} type="submit">
+        <button
+          className={`${styles.canvasButton} ${styles.submit}`}
+          type="submit"
+        >
           SUBMIT
         </button>
       </form>

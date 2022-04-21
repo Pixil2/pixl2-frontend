@@ -70,12 +70,12 @@
 .imageButton {
   background-color: black;
   color: white;
-  /* border: black 0.3vw solid; */
+  font-family: var(--font-primary);
   border: none;
-  padding: 0.5vw 0.9vw;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.9vw;
+  padding: 1em 1.5em;
+  font-size: 0.6vw;
 }
+
 .imageButton:hover {
   transform: scale(1.02);
 }
@@ -86,9 +86,14 @@
 }
 
 .createButton {
-  font-size: 1.2vw;
-  margin-top: 2vh;
-  padding: 1vw;
+  background-color: black;
+  color: white;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
 }
 
 @keyframes fadeProfile {

@@ -24,7 +24,7 @@ export default function Prompt() {
   return (
     <div className={styles.Prompt}>
       {noun && (
-        <span className={prompt}>
+        <span className={styles.promptText}>
           You could draw a(n) {adjective} {noun}!
         </span>
       )}

@@ -58,16 +58,6 @@
   font-family: var(--font-secondary);
 }
 
-.createButton {
-  background-color: black;
-  color: white;
-  border: none;
-  /* border: black 0.3vw solid; */
-  padding: 1vw;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.9vw;
-  margin-top: 2vh;
-}
 .createButton:hover {
   transform: scale(1.02);
 }
@@ -78,8 +68,14 @@
 }
 
 .createButton {
-  font-size: 1.2vw;
-  margin-top: 2vh;
+  background-color: black;
+  color: white;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
 }
 
 @keyframes fadeCommunity {

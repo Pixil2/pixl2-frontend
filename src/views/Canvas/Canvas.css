@@ -19,26 +19,31 @@
   margin-top: 20vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1vh;
   font-size: 1.5vw;
 }
 
 .canvasFormInputs p {
-  font-size: 1.5vw;
+  font-size: clamp(20px, 3vw, 30px);
   text-align: center;
   margin-bottom: 2vh;
+  font-family: var(--font-secondary);
+}
+
+.submit {
+  width: 10vw;
 }
 
 .canvasButton {
-  margin-top: 1vh;
   background-color: black;
   color: white;
-  border: none;
-  padding: 0.8vw;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1vw;
-  width: auto;
-  align-self: center;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
 }
 
 .canvasButton:hover {
@@ -57,14 +62,14 @@
 }
 
 .canvasSelect {
-  margin-top: 1vh;
   background-color: white;
   border: black 0.3vw solid;
-  padding: 0.42vw;
-  font-family: monospace;
-  font-size: 1vw;
-  width: auto;
-  align-self: center;
+  border: 0.3vw solid black;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  line-height: 1;
 }
 
 .canvasTools {
@@ -78,17 +83,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 1vh;
+  margin-top: 1.5vh;
+}
+
+.promptText {
+  font-family: var(--font-secondary);
+  text-align: center;
+  font-size: clamp(20px, 3vw, 30px);
 }
 
 .promptButton {
   border: 0.3vw solid black;
   background-color: white;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1vw;
-  padding: 0.5vw 1.5vw;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-nav);
+  text-transform: uppercase;
+  padding: 0.5em 1.5em;
   margin-top: 1vh;
-  width: 15vw;
   align-self: center;
 }
 
