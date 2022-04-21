@@ -47,7 +47,7 @@ export default function CanvasForm({ image, setCanvasInfo, setCreated }) {
         />
 
         <button className={styles.canvasButton} type="submit">
-          Submit
+          SUBMIT
         </button>
       </form>
     </div>

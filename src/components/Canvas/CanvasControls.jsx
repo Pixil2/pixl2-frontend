@@ -65,16 +65,16 @@ export default function CanvasControls({ image, edit = false }) {
             className={styles.canvasButton}
             onClick={() => handleSave(image)}
           >
-            Save
+            SAVE
           </button>
           <button className={styles.canvasButton} onClick={handleCapture}>
-            Download
+            DOWNLOAD
           </button>
         </>
       )}
       {!user.id && (
         <div className={styles.guestControls}>
-          <button className={styles.canvasButton}>Download</button>
+          <button className={styles.canvasButton}>DOWNLOAD</button>
           <p>To create a profile and save your image, please sign in!</p>
         </div>
       )}
@@ -84,7 +84,7 @@ export default function CanvasControls({ image, edit = false }) {
             className={styles.canvasButton}
             onClick={() => handleUpdate(image)}
           >
-            Update
+            UPDATE
           </button>
         </>
       )}
