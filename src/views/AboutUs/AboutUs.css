@@ -1,3 +1,9 @@
+.AboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .aboutUsContainer {
   display: flex;
   flex-direction: column;
@@ -14,15 +20,48 @@
 
 .aboutBioContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .aboutBio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 20vw;
+  gap: 2vw;
+  margin: 2vw;
+}
+
+.aboutBio h3 {
+  font-family: var(--font-primary);
+  font-size: clamp(10px, 1vw, 20px);
+  text-transform: uppercase;
 }
 
 .aboutBio img {
   width: 15vw;
+  border: 0.3vw solid black;
+}
+
+.aboutBioLinks {
+  font-family: var(--font-primary);
+  font-size: clamp(8px, 1vw, 15px);
+}
+
+.aboutBioLink {
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-size: clamp(8px, 1vw, 15px);
+}
+
+.aboutBio p {
+  font-family: var(--font-secondary);
+  font-size: clamp(15px, 2vw, 25px);
+}
+
+.aboutCredit {
+  margin: 6vh 0;
 }
 
 @keyframes fadeAbout {

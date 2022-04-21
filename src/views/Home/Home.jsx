@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Layout/Header';
 import styles from './Home.css';
-import pixelImg from '../../assets/rainbowpattern.png';
+import pixelImg from '../../assets/pattern.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
