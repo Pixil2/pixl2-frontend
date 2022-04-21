@@ -44,7 +44,7 @@ export default function Community() {
         </p>
       </div>
       <Link to="/canvas">
-        <button className={styles.createButton}>Create Image</button>
+        <button className={styles.createButton}>CREATE IMAGE</button>
       </Link>
       <div className={styles.imageContainer}>
         {currentImages.map((item, index) => {
@@ -54,7 +54,7 @@ export default function Community() {
             <div key={uuid()}>
               <div className={styles.imageHeader}>
                 <h1 className={styles.imageTitle}>{item.title}</h1>
-                <p className={styles.imageTag}>{tag}</p>
+                <p className={styles.imageTag}>TAG: {tag}</p>
               </div>
               <ProfileGrid image={item} />
             </div>

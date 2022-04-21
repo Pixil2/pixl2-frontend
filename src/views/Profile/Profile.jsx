@@ -52,7 +52,7 @@ export default function Profile() {
       </div>
       <Link to="/canvas">
         <button className={`${styles.createButton} ${styles.imageButton}`}>
-          Create Image
+          CREATE IMAGE
         </button>
       </Link>
       <div className={styles.ProfileContainer}>

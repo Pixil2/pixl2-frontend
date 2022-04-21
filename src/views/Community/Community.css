@@ -37,9 +37,11 @@
 }
 
 .imageTag {
-  text-transform: lowercase;
-  font-family: monospace;
+  text-transform: uppercase;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2vw;
 }
+
 .communityHeader {
   display: flex;
   flex-direction: column;
@@ -59,11 +61,13 @@
 }
 
 .createButton {
-  background-color: white;
-  border: black 0.3vw solid;
+  background-color: black;
+  color: white;
+  border: none;
+  /* border: black 0.3vw solid; */
   padding: 1vw;
-  font-family: monospace;
-  font-size: 2vw;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9vw;
   margin-top: 2vh;
 }
 .createButton:hover {
@@ -76,6 +80,6 @@
 }
 
 .createButton {
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   margin-top: 2vh;
 }
