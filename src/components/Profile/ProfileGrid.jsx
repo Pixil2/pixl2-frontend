@@ -52,6 +52,8 @@ export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
     setPixelArray(image);
   }
 
+  const handleClick = (index) => {};
+
   useEffect(() => {
     renderImage(image);
   }, [image, tool, color]);
