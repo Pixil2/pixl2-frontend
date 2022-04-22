@@ -30,7 +30,7 @@ export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
             background={colorArray[i]}
             width={`${Math.round(250 / imageObject.height)}px`}
             height={`${Math.round(250 / imageObject.height)}px`}
-            handleClick={handleClick}
+            // handleClick={handleClick}
             index={i}
           />
         );
@@ -42,7 +42,7 @@ export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
             background={colorArray[i]}
             width={`${Math.round(200 / imageObject.width)}px`}
             height={`${Math.round(200 / imageObject.width)}px`}
-            handleClick={handleClick}
+            // handleClick={handleClick}
             index={i}
           />
         );
@@ -52,7 +52,7 @@ export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
     setPixelArray(image);
   }
 
-  const handleClick = (index) => {};
+  // const handleClick = (index) => {};
 
   useEffect(() => {
     renderImage(image);
