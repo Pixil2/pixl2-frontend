@@ -52,29 +52,6 @@ export default function ProfileGrid({ image, setImage, tool, eraser, color }) {
     setPixelArray(image);
   }
 
-  const handleClick = (index) => {
-    const newImage = { ...image };
-    let i = rainbowIndex;
-
-    if (tool === 'pencil') {
-      newImage.colorArray[index] = color;
-    } else if (tool === 'eraser') {
-      newImage.colorArray[index] = eraser.colorArray[index];
-    } else if (tool === 'rainbow') {
-      if (rainbowIndex === 7) {
-        i = 0;
-        newImage.colorArray[index] = rainbowArray[rainbowIndex];
-        setRainbowIndex(i);
-        i++;
-      } else {
-        newImage.colorArray[index] = rainbowArray[rainbowIndex];
-        i++;
-        setRainbowIndex(i);
-      }
-    }
-    setImage(newImage);
-  };
-
   useEffect(() => {
     renderImage(image);
   }, [image, tool, color]);
