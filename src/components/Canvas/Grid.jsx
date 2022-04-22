@@ -26,7 +26,6 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
       if (imageObject.height >= imageObject.width) {
         image.push(
           <Pixl
-            pixelIndex={i}
             key={uuid()}
             background={colorArray[i]}
             width={`${Math.round(500 / imageObject.height)}px`}
@@ -38,7 +37,6 @@ export default function Grid({ image, setImage, tool, eraser, color }) {
       } else {
         image.push(
           <Pixl
-            pixelIndex={i}
             key={uuid()}
             background={colorArray[i]}
             width={`${Math.round(500 / imageObject.width)}px`}
